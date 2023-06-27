@@ -1,0 +1,25 @@
+.primary-button {
+    display: flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%), #7660FF;
+    box-shadow: 0px 0px 0px 0px rgba(66, 60, 114, 0.07), 0px 2px 4px 0px rgba(66, 60, 114, 0.07), 0px 8px 8px 0px rgba(66, 60, 114, 0.06), 0px 18px 11px 0px rgba(66, 60, 114, 0.04), 0px 33px 13px 0px rgba(66, 60, 114, 0.01), 0px 51px 14px 0px rgba(66, 60, 114, 0.00);
+    cursor: pointer;
+}
+
+.primary-button:hover{
+    background: #7660FF;
+}
+
+.button-label {
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 2px 6px 0px rgba(42, 28, 127, 0.32);
+    font-size: 18px;
+    // font-family: Manrope;
+    font-weight: 600;
+    line-height: 32px
+}
