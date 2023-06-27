@@ -3,6 +3,7 @@ import HOME_IMAGE_LEFT from "../../assets/images/Character Set 1 - 6.png";
 import HOME_IMAGE_RIGHT from "../../assets/images/Character Set 1 - 12.png";
 import HOME_IMAGE_BOTTOM from "../../assets/images/Character Set 1 - 16.png";
 import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
+import SecondaryHyperlink from "../CommonComponents/SecondaryHyperlink/SecondaryHyperlink";
 
 const LandingPageComponent = () => {
   return (
@@ -33,8 +34,11 @@ const LandingPageComponent = () => {
             }}
           ></div>
           <div className="buttons">
-            <PrimaryButton className="full-width" buttonLabel='Start Quiz'/>
-            <label>View All Personas</label>
+            <PrimaryButton className="full-width" buttonLabel="Start Quiz" />
+            <SecondaryHyperlink linkLabel="View All Personas"/>
+            <div className="bottom-image">
+                <img src={HOME_IMAGE_BOTTOM} alt="bottom"/>
+            </div>
           </div>
           <div
             className="image-container rotate-right"
