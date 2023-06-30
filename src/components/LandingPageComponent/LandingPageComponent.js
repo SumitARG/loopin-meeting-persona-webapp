@@ -6,6 +6,12 @@ import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
 import SecondaryHyperlink from "../CommonComponents/SecondaryHyperlink/SecondaryHyperlink";
 
 const LandingPageComponent = () => {
+  const buttonClickHandler = () => {
+    document
+      .getElementsByClassName("quiz-screen question-1")[0]
+      .scrollIntoView({ block: "nearest", behavior: "smooth" });
+  };
+
   return (
     <div className="container landing-page-container">
       <div className="home-page-header">What is your meeting persona? 🚀</div>
@@ -34,10 +40,14 @@ const LandingPageComponent = () => {
             }}
           ></div>
           <div className="buttons">
-            <PrimaryButton className="full-width" buttonLabel="Start Quiz" />
-            <SecondaryHyperlink linkLabel="View All Personas"/>
+            <PrimaryButton
+              className="full-width"
+              buttonLabel="Start Quiz"
+              onButtonClick={buttonClickHandler}
+            />
+            <SecondaryHyperlink linkLabel="View All Personas" />
             <div className="bottom-image">
-                <img src={HOME_IMAGE_BOTTOM} alt="bottom"/>
+              <img src={HOME_IMAGE_BOTTOM} alt="bottom" />
             </div>
           </div>
           <div

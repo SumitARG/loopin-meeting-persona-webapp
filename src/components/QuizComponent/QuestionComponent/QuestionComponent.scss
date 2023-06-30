@@ -1,0 +1,12 @@
+.question-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.question-header{
+    color: var(--gray-600, #475467);
+    font-size: 16px;
+    // font-family: Manrope;
+    font-weight: 700;
+}
