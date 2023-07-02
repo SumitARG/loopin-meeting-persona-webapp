@@ -1,0 +1,26 @@
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+    background: var(--base-white, #FFF);
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    cursor: pointer;
+    width: 90%;
+
+    .option-content {
+        width: 90%;
+    }
+
+    .selection-indicator {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        img {
+            width: 19px;
+            height: 19px;
+        }
+    }
+}
