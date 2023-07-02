@@ -1,9 +1,24 @@
 import "./QuestionComponent.scss";
 import Option from "./Option/Option";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { LOCAL_STORAGE } from "../../../config/Constants";
 
 const QuestionComponent = ({ questionTemplate }) => {
   const [selectedId, setSelectedId] = useState();
+
+  useEffect(() => {
+    let answerSet = localStorage.getItem(LOCAL_STORAGE.ANSWERS_STORAGE);
+    if (answerSet) {
+      answerSet = JSON.parse(answerSet);
+      answerSet[questionTemplate.questionId] = questionTemplate.options.find(
+        (item) => item.optionId === selectedId
+      )?.optionContent;
+      localStorage.setItem(
+        LOCAL_STORAGE.ANSWERS_STORAGE,
+        JSON.stringify(answerSet)
+      );
+    }
+  }, [selectedId]);
 
   return (
     <div className="question-section">

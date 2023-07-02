@@ -8,14 +8,16 @@ const Option = ({ content, id, isSelected, setSelected }) => {
 
   return (
     <div className="option" onClick={optionSelectHandler}>
-      {content}
-      {
-        <img
-          src={SELECTED_ICON}
-          alt="selected"
-          style={{ display: !isSelected ? "none" : "block" }}
-        />
-      }
+      <div className="option-content">{content}</div>
+      <div className="selection-indicator">
+        {
+          <img
+            src={SELECTED_ICON}
+            alt="selected"
+            style={{ display: !isSelected ? "none" : "block" }}
+          />
+        }
+      </div>
     </div>
   );
 };

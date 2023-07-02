@@ -9,8 +9,18 @@
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
     cursor: pointer;
     width: 90%;
-    img {
-        width: 19px;
-        height: 19px;
+
+    .option-content {
+        width: 90%;
+    }
+
+    .selection-indicator {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        img {
+            width: 19px;
+            height: 19px;
+        }
     }
 }
