@@ -12,7 +12,8 @@ const QuestionComponent = ({ questionTemplate }) => {
       answerSet = JSON.parse(answerSet);
       answerSet[questionTemplate.questionId] = questionTemplate.options.find(
         (item) => item.optionId === selectedId
-      )?.optionContent;
+      )?.optionContent || "";
+      console.log("This is executed", answerSet);
       localStorage.setItem(
         LOCAL_STORAGE.ANSWERS_STORAGE,
         JSON.stringify(answerSet)

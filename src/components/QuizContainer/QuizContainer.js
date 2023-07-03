@@ -135,7 +135,7 @@ const QuizContainer = () => {
   };
 
   return (
-    <div>
+    <div className="quiz-container">
       <QuizComponent
         questionNumber={1}
         questionDetails={questionsList.question1}

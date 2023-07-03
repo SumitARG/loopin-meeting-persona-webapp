@@ -8,27 +8,40 @@ import LEFT_IMAGE_6 from "../../assets/images/quiz_image_left_6.png";
 import RIGHT_IMAGE_1 from "../../assets/images/quiz_image_right_1.png";
 import QuestionComponent from "./QuestionComponent/QuestionComponent";
 import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
-import { LOCAL_STORAGE, QUIZ_IMAGES } from "../../config/Constants";
+import {
+  LOCAL_STORAGE,
+  QUIZ_IMAGES,
+  ROUTE_NAMES,
+} from "../../config/Constants";
 import FooterComponent from "../FooterComponent/FooterComponent";
+import { useNavigate } from "react-router";
 
 const QuizComponent = ({ questionNumber, questionDetails }) => {
+  const navigate = useNavigate();
+
   const nextButtonClickHandler = (event) => {
     event.preventDefault();
-    if(questionNumber === 6){
+    if (questionNumber === 6) {
       let answers = localStorage.getItem(LOCAL_STORAGE.ANSWERS_STORAGE);
       answers = JSON.parse(answers);
-      let notAnsweredIndex = Object.keys(answers).findIndex(item => (answers[item] === "" || answers[item] === null))
-      if(notAnsweredIndex > -1){
-        document.getElementsByClassName('quiz-screen  question-' + (notAnsweredIndex+1))[0]?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      let notAnsweredIndex = Object.keys(answers).findIndex(
+        (item) => answers[item] === "" || answers[item] === null
+      );
+      if (notAnsweredIndex > -1) {
+        document
+          .getElementsByClassName(
+            "quiz-screen  question-" + (notAnsweredIndex + 1)
+          )[0]
+          ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      } else {
+        navigate(`/${ROUTE_NAMES.SUBMIT_FORM_ROUTE}`);
       }
-      else{
-        console.log("Submit the score");
-      }
-    }
-    else{
+    } else {
       document
-      .getElementsByClassName("quiz-screen question-" + (questionNumber + 1))[0]
-      ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+        .getElementsByClassName(
+          "quiz-screen question-" + (questionNumber + 1)
+        )[0]
+        ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
     }
   };
 
@@ -92,7 +105,7 @@ const QuizComponent = ({ questionNumber, questionDetails }) => {
           <img src={getRightImage()} alt="right" />
         </div>
       </div>
-      {questionNumber === 6 && <FooterComponent />}
+      {/* {questionNumber === 6 && <FooterComponent />} */}
     </>
   );
 };

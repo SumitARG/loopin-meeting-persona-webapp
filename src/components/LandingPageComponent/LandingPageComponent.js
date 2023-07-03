@@ -4,12 +4,19 @@ import HOME_IMAGE_RIGHT from "../../assets/images/Character Set 1 - 12.png";
 import HOME_IMAGE_BOTTOM from "../../assets/images/Character Set 1 - 16.png";
 import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
 import SecondaryHyperlink from "../CommonComponents/SecondaryHyperlink/SecondaryHyperlink";
+import { useNavigate } from "react-router";
+import { ROUTE_NAMES } from "../../config/Constants";
 
 const LandingPageComponent = () => {
+  const navigate = useNavigate();
+
   const buttonClickHandler = () => {
-    document
-      .getElementsByClassName("quiz-screen question-1")[0]
-      .scrollIntoView({ block: "nearest", behavior: "smooth" });
+    navigate(`${ROUTE_NAMES.QUIZ_ROUTE}`);
+    setTimeout(() => {
+      document
+        .getElementsByClassName("quiz-screen question-1")[0]
+        .scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }, 100);
   };
 
   return (
