@@ -1,3 +1,10 @@
+.profile-view-component{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
 .preview-section {
     display: flex;
     padding: 96px 80px;
@@ -65,7 +72,7 @@
     margin-top: -10%;
 }
 
-.persona-description {
+.persona-tagline {
     color: #7D7D7D;
     text-align: right;
     font-size: 32px;
@@ -75,8 +82,44 @@
     line-height: normal;
 }
 
-.secondary-actions{
+.secondary-actions {
     width: 50%;
     display: flex;
     justify-content: space-between;
+}
+
+.seprator{
+    width: 90%;
+    .seprator-line{
+        border: 1px solid #EAECF0;
+    }
+}
+
+
+.description-section {
+    display: flex;
+    padding: 64px 212px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    border-radius: 16px;
+    background: var(--gray-50, #F9FAFB);
+    width: 80%;
+}
+
+.persona-description {
+    color: var(--gray-600, #475467);
+    font-size: 16px;
+    // font-family: Manrope;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+.strength-insights{
+    width: 80%;
+}
+
+.weakness-insights{
+    width: 80%;
 }
