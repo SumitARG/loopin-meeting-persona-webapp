@@ -96,7 +96,6 @@ const QuizComponent = ({ questionNumber, questionDetails }) => {
             onClick={(event) => nextButtonClickHandler(event)}
           >
             <PrimaryButton
-              buttonWidth="100"
               buttonLabel={questionNumber === 6 ? "Submit" : "Next"}
             />
           </div>

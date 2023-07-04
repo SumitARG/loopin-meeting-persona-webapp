@@ -1,11 +1,13 @@
 export const LOCAL_STORAGE = {
   ANSWERS_STORAGE: "answersStorage",
+  COMPUTED_PERSONA: "coputedPersona"
 };
 
 export const ROUTE_NAMES = {
   HOME_ROUTE: "home",
   QUIZ_ROUTE: "quiz",
-  SUBMIT_FORM_ROUTE: "submit_form"
+  SUBMIT_FORM_ROUTE: "submit_form",
+  COMPUTED_PERSONA_ROUTE: "computed_persona"
 };
 
 export const QUIZ_IMAGES = {

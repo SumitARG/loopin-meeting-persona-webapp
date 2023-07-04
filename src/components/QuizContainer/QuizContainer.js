@@ -63,7 +63,7 @@ const QuizContainer = () => {
         },
         {
           optionContent:
-            "c)I diffuse tension with humor and bring a lighthearted perspective to resolve conflicts. 😄",
+            "c) I diffuse tension with humor and bring a lighthearted perspective to resolve conflicts. 😄",
           optionId: 3,
         },
       ],
@@ -74,7 +74,7 @@ const QuizContainer = () => {
       options: [
         {
           optionContent:
-            "a)I send detailed action item lists and deadlines to ensure progress. ✉️",
+            "a) I send detailed action item lists and deadlines to ensure progress. ✉️",
           optionId: 1,
         },
         {
@@ -84,7 +84,7 @@ const QuizContainer = () => {
         },
         {
           optionContent:
-            "c)I create personalized memes or GIFs to summarize the meeting outcomes and share them. 🎭",
+            "c) I create personalized memes or GIFs to summarize the meeting outcomes and share them. 🎭",
           optionId: 3,
         },
       ],
@@ -99,12 +99,12 @@ const QuizContainer = () => {
         },
         {
           optionContent:
-            "b)I love thinking outside the box and bringing fresh ideas. 💡",
+            "b) I love thinking outside the box and bringing fresh ideas. 💡",
           optionId: 2,
         },
         {
           optionContent:
-            "c)I believe in fostering a relaxed and stress-free meeting environment. 😌",
+            "c) I believe in fostering a relaxed and stress-free meeting environment. 😌",
           optionId: 3,
         },
       ],
