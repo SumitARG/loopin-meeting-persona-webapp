@@ -23,6 +23,7 @@
     flex-direction: column;
     gap: 54px;
     width: 50%;
+    align-items: center;
 }
 
 .right-image {
@@ -32,8 +33,8 @@
     height: 80%;
 
     img {
-        width: 363px;
-        height: 279px;
+        width: 333px;
+        // height: 279px;
     }
 }
 
