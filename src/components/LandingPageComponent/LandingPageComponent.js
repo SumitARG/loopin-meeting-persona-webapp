@@ -7,7 +7,7 @@ import SecondaryHyperlink from "../CommonComponents/SecondaryHyperlink/Secondary
 import { useNavigate } from "react-router";
 import { ROUTE_NAMES } from "../../config/Constants";
 
-const LandingPageComponent = () => {
+const LandingPageComponent = ({showPersona}) => {
   const navigate = useNavigate();
 
   const buttonClickHandler = () => {
@@ -18,6 +18,10 @@ const LandingPageComponent = () => {
         .scrollIntoView({ block: "nearest", behavior: "smooth" });
     }, 100);
   };
+
+  const secondaryButtonClick = () => {
+    showPersona();
+  }
 
   return (
     <div className="container landing-page-container">
@@ -52,7 +56,7 @@ const LandingPageComponent = () => {
               buttonLabel="Start Quiz"
               onButtonClick={buttonClickHandler}
             />
-            <SecondaryHyperlink linkLabel="View All Personas" />
+            <SecondaryHyperlink linkLabel="View All Personas" onButtonClick={secondaryButtonClick}/>
             <div className="bottom-image">
               <img src={HOME_IMAGE_BOTTOM} alt="bottom" />
             </div>

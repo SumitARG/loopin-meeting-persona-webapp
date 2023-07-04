@@ -1,11 +1,8 @@
 import "./SecondaryHyperlink.scss";
 
-const SecondaryHyperlink = ({ linkLabel }) => {
+const SecondaryHyperlink = ({ linkLabel, onButtonClick }) => {
   return (
-    <div className="secondary-hyperlink">
-      {
-        //eslint-disable-next-line
-      }
+    <div className="secondary-hyperlink" onClick={onButtonClick}>
       <label>{linkLabel}</label>
     </div>
   );
