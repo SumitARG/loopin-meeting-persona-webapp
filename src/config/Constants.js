@@ -1,6 +1,7 @@
 export const LOCAL_STORAGE = {
   ANSWERS_STORAGE: "answersStorage",
   COMPUTED_PERSONA: "coputedPersona",
+  USER_EMAIL:"userEmail"
 };
 
 export const ROUTE_NAMES = {

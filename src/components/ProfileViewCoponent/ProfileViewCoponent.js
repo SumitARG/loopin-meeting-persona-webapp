@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PERSONA_1 from "../../assets/images/The Captivating Creator.png";
 import PERSONA_5 from "../../assets/images/The Celebration Connoisseur.png";
 import PERSONA_8 from "../../assets/images/The Chill Zen Master.png";
@@ -14,15 +14,34 @@ import LoopinRecommendations from "../CommonComponents/LoopinRecommendations/Loo
 import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
 import SecondaryHyperlink from "../CommonComponents/SecondaryHyperlink/SecondaryHyperlink";
 import "./ProfileViewCoponent.scss";
-import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import { collection, getDoc, getDocs, query, where } from "firebase/firestore";
+import { firestore } from "../../firebase_setup/firebase";
 
 const ProfileViewCoponent = () => {
   const [computedPersona] = useState(
     localStorage.getItem(LOCAL_STORAGE.COMPUTED_PERSONA)
   );
 
+  const usersRef = collection(firestore, "Users");
+
   const [personaDetails] = useState(PERSONAS_DATA[computedPersona]);
+
+  const [leaderboard, setLeaderboard] = useState([])
+
+  const getLeaderboardData = async() => {
+    const q = query(usersRef);
+    const qSnapshot = await getDocs(q)
+    console.log("leaderboard => ", qSnapshot);
+    qSnapshot.forEach(doc => {
+      console.log(doc.data())
+    })
+    setLeaderboard(q);
+  }
+
+  useEffect(() => {
+    getLeaderboardData();
+  }, [])
 
   const downloadHandler = () => {
     const input = document.getElementById("mainApp");

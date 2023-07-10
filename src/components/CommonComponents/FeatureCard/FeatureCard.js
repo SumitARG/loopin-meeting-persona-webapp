@@ -10,7 +10,6 @@ import "./FeatureCard.scss";
 
 const FeatureCard = ({ feature }) => {
 
-    console.log(feature?.id, feature)
 
   const getImage = () => {
     switch (feature?.id) {
