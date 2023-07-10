@@ -11,6 +11,8 @@ export const ROUTE_NAMES = {
 };
 
 export const QUIZ_IMAGES = {
+  RIGHT_IMAGE_1:
+    "https://s3-alpha-sig.figma.com/img/2836/67c5/4aa411f34c3f243b493fb0621f84fde6?Expires=1689552000&Signature=VJMpndbxMjj7-28zmn7~PUpYdKethlXQ6-2hGvKTDyFPGvx-HTWHsjx~cKTfN-vwOnaFzw6rqHgvzx0t-mBRxJEbYB26wv2zsPRPgLLYDJulxHHZk1vLuERxs24W7qIYY-LGrimNvooEwSXb8UoWW1IbylEyWgD7Di1HCiqIQe1jxQrxOKasdKH4EeN06ba9hCbVMWuI3myDV7hhGo-u6ohGBiIQ1fOCQAQq6E2uo73dIKRVNU-o~q5MWBIZg10N2b8hAq4pgSGKtIOsxotYTOOskmzLnA9ns9D48pbX2yYQzvtzKwWP6-ATUy-dh7CzUZ05KibOWqHUCa9txFTIxQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
   RIGHT_IMAGE_2:
     "https://s3-alpha-sig.figma.com/img/572a/b4cc/0d9bbe114840c049ffc3f7c77e84c52d?Expires=1688947200&Signature=iiRlIN5HkY~M3Pg7TkyvKqhCqq-VDFthsFasElc-T-J2vcp8-tbd6r-MhCDDygl4jiOX4IycGYjvhtPFbyRre3FbOHlDiyuFIMoYZatT25V8zaSr1pg2HOQJ8CY8bTolzSJaS1U7Kx7nz7kQgJl0JwJ4PqJv2iwC7I5UbpIpf4ZUp4ZGBV56~2xXwlBeIE3AbhaFOf~-Iy4G25RIlT8bq8boQYzNx93TpD~oryxX~VAXxYnASVj2hcf~d6GFXzgR-n4QJmr2ObyRXVC7mARi3iIK7DgYlFc9rmpP9NrwGkWY5mkks5bZHo8NUdS2tu0PikXj80FgYXUz~jMwTulK6A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
   RIGHT_IMAGE_3:
@@ -46,6 +48,9 @@ export const PERSONAS_DATA = {
       "May get carried away with humor, sometimes diverting attention from the main agenda",
       "Can be overly focused on entertainment, potentially neglecting important details",
     ],
+    recommendations: [
+      1, 2, 3
+    ]
   },
   "The Dynamic Agenda Artist": {
     tagLine: "Igniting excitement with visually captivating meeting agendas.",
@@ -53,7 +58,7 @@ export const PERSONAS_DATA = {
       'Traits: As "The Dynamic Agenda Artist," you possess the talent to prepare visually appealing and captivating meeting agendas that grab everyone\'s attention. 🎨📝 Your creativity shines through in your agenda designs, making meetings exciting and setting the stage for engaging discussions. Your organizational skills ensure that meetings flow smoothly and effectively. 📅✨',
       'Collaborating with "The Captivating Creator" is a natural fit, as your visually appealing agendas complement their ability to capture meeting highlights creatively. Together, you create an immersive meeting experience that combines captivating visuals with memorable summaries. 🌟🎨📝',
       'Additionally, your synergy with "The Chill Zen Master" brings balance and harmony to meetings. Their calm and relaxed demeanor complements your dynamic agenda style, creating a comfortable atmosphere that encourages open discussions and effective decision-making. 🧘🔮',
-      'In summary, as "The Dynamic Agenda Artist," you bring creativity and organization to the forefront of meetings, making them visually appealing, exciting, and well-structured. Your collaborative spirit with "The Captivating Creator" and "The Chill Zen Master" creates a meeting environment that seamlessly integrates creativity and mindfulness. 🎨📝🌟'
+      'In summary, as "The Dynamic Agenda Artist," you bring creativity and organization to the forefront of meetings, making them visually appealing, exciting, and well-structured. Your collaborative spirit with "The Captivating Creator" and "The Chill Zen Master" creates a meeting environment that seamlessly integrates creativity and mindfulness. 🎨📝🌟',
     ],
     strengths: [
       "Crafts visually stunning and captivating meeting agendas",
@@ -64,13 +69,16 @@ export const PERSONAS_DATA = {
       "May spend excessive time on design and aesthetics, potentially impacting meeting efficiency",
       "Can get caught up in the visual appeal and overlook practicality at times",
     ],
+    recommendations: [
+      8, 5, 4
+    ]
   },
   "The Conflict Whisperer": {
     tagLine: "Harmonizing discussions and resolving conflicts with finesse.",
     description: [
       'Traits: As "The Conflict Whisperer," you possess a unique knack for resolving conflicts and facilitating open discussions. 🗣️✨ Your ability to find common ground and diffuse tension creates a harmonious meeting atmosphere where everyone feels heard and understood. Your exceptional interpersonal skills and empathy enable you to navigate challenging situations with grace and ease. 🤝💫',
       'Collaborating with "The Captivating Creator" and "The Chill Zen Master" is a winning combination. Your ability to resolve conflicts pairs well with "The Captivating Creator\'s" creative approach to keeping everyone engaged, while the calm presence of "The Chill Zen Master" helps maintain a peaceful and inclusive meeting environment. 🌟🗣️🧘',
-      'In summary, as "The Conflict Whisperer," you play a vital role in fostering healthy discussions and creating an atmosphere of trust and understanding. Your talent for conflict resolution, combined with your collaborative spirit, allows meetings to become spaces where diverse perspectives are valued and conflicts are transformed into opportunities for growth and consensus. 🗣️🤝✨'
+      'In summary, as "The Conflict Whisperer," you play a vital role in fostering healthy discussions and creating an atmosphere of trust and understanding. Your talent for conflict resolution, combined with your collaborative spirit, allows meetings to become spaces where diverse perspectives are valued and conflicts are transformed into opportunities for growth and consensus. 🗣️🤝✨',
     ],
     strengths: [
       "Possesses a supernatural ability to resolve conflicts with grace and finesse",
@@ -81,6 +89,9 @@ export const PERSONAS_DATA = {
       "May prioritize conflict resolution over meeting objectives, affecting time management",
       "Can struggle with more assertive decision-making in high-pressure situations",
     ],
+    recommendations: [
+      1, 6, 7
+    ]
   },
   "The Outcome Orchestrator": {
     tagLine: "Driving progress and results through meticulous follow-up.",
@@ -88,7 +99,7 @@ export const PERSONAS_DATA = {
       'Traits: As "The Outcome Orchestrator," you excel at ensuring follow-up on meeting outcomes by providing detailed action item lists and setting deadlines. 📋🚀 Your focus on progress and results keeps the team on track, driving them towards achieving their goals. Your meticulous approach and attention to detail make you an invaluable asset in translating meeting discussions into actionable steps. 🔍💼',
       'Collaborating with "The Dynamic Agenda Artist" creates a powerful synergy, as your focus on outcomes complements their ability to set the stage for engaging discussions. Together, you establish a seamless workflow where productive meetings result in concrete action plans. 🎨📋🚀',
       'Additionally, your collaboration with "The Super Productive Prodigy" enhances productivity further. Your emphasis on follow-up aligns perfectly with their goal-oriented mindset, ensuring that meeting outcomes are translated into tangible progress. 💪📋🔍',
-      'In summary, as "The Outcome Orchestrator," you bring structure and accountability to meetings by diligently tracking action items and deadlines. Your collaborative efforts with "The Dynamic Agenda Artist" and "The Super Productive Prodigy" create a powerful combination that drives the team towards achieving measurable results. 📋🚀💼'
+      'In summary, as "The Outcome Orchestrator," you bring structure and accountability to meetings by diligently tracking action items and deadlines. Your collaborative efforts with "The Dynamic Agenda Artist" and "The Super Productive Prodigy" create a powerful combination that drives the team towards achieving measurable results. 📋🚀💼',
     ],
     strengths: [
       "Orchestrates follow-up on meeting outcomes with meticulous action item lists",
@@ -99,13 +110,17 @@ export const PERSONAS_DATA = {
       "May become overly focused on action items, potentially neglecting broader discussions",
       "Can be so goal-oriented that they forget to celebrate and enjoy the process",
     ],
+    recommendations: [
+      5, 6, 4
+    ]
   },
   "The Celebration Connoisseur": {
-    tagLine: "Spreading joy and acknowledging achievements with virtual celebrations.",
+    tagLine:
+      "Spreading joy and acknowledging achievements with virtual celebrations.",
     description: [
       'Traits: As "The Celebration Connoisseur," you have a genuine love for acknowledging achievements and milestones by organizing virtual celebrations. 🎉🎊 Your enthusiasm and positive energy create a sense of accomplishment and foster a culture of appreciation within the team. Your ability to uplift and inspire others through celebration makes meetings memorable and joyful. 🌟✨🎉',
       'Collaborating with "The Captivating Creator" and "The Creative Maverick" brings your celebration skills to life. Their creative approaches align perfectly with your knack for creating memorable and engaging celebrations, resulting in an atmosphere that combines achievement and creativity. 🎨🎉🎊',
-      'In summary, as "The Celebration Connoisseur," you infuse meetings with a sense of joy and accomplishment. Your dedication to acknowledging achievements and milestones creates a positive and motivating environment where team members feel valued and inspired.🎉🌟🎈'
+      'In summary, as "The Celebration Connoisseur," you infuse meetings with a sense of joy and accomplishment. Your dedication to acknowledging achievements and milestones creates a positive and motivating environment where team members feel valued and inspired.🎉🌟🎈',
     ],
     strengths: [
       "Master of ceremonies, celebrating achievements and milestones with infectious enthusiasm",
@@ -116,15 +131,18 @@ export const PERSONAS_DATA = {
       "May prioritize celebrations over addressing challenges or conflicts",
       "Can sometimes go overboard with festivities, causing distractions from the meeting's purpose",
     ],
+    recommendations: [
+      1, 5, 3
+    ]
   },
   "The Super Productive Prodigy": {
     tagLine: "Maximizing efficiency and goal-oriented productivity.",
     description: [
       'In the realm of meetings, you shine as "The Super Productive Prodigy." Your defining trait is an unwavering commitment to achieving maximum efficiency and delivering results. With a razor-sharp focus and a goal-oriented mindset, you become the driving force behind productive discussions and decision-making. 💼🚀💡',
-      'Your approach is characterized by meticulous preparation, ensuring that every minute spent in a meeting contributes meaningfully towards the desired outcomes. You are adept at streamlining agendas, keeping discussions on track, and eliminating distractions that may hinder progress. 📋🎯✅',
+      "Your approach is characterized by meticulous preparation, ensuring that every minute spent in a meeting contributes meaningfully towards the desired outcomes. You are adept at streamlining agendas, keeping discussions on track, and eliminating distractions that may hinder progress. 📋🎯✅",
       'Collaborating with "The Outcome Orchestrator" is a match made in productivity heaven, as you share a mutual dedication to achieving tangible results. Together, you create a dynamic duo that efficiently translates meeting outcomes into action items and drives progress forward. 💪🤝🏆',
       'Additionally, your collaboration with "The Captivating Creator" yields fruitful outcomes. The captivating visuals and engaging highlights crafted by "The Captivating Creator" align perfectly with your efficiency-driven mindset, enhancing the overall impact of the meetings and fostering an environment of both productivity and creativity. 🎨✨🌟',
-      'With your unwavering determination to optimize meeting time and resources, you play a vital role in keeping the team focused, motivated, and on track to achieve their goals. As "The Super Productive Prodigy," you are a force to be reckoned with, revolutionizing the way meetings are conducted and inspiring others to embrace the power of productivity. 💼💪🌟🔥'
+      'With your unwavering determination to optimize meeting time and resources, you play a vital role in keeping the team focused, motivated, and on track to achieve their goals. As "The Super Productive Prodigy," you are a force to be reckoned with, revolutionizing the way meetings are conducted and inspiring others to embrace the power of productivity. 💼💪🌟🔥',
     ],
     strengths: [
       "Embodies the spirit of hyper-efficiency, squeezing maximum productivity out of every meeting",
@@ -135,6 +153,9 @@ export const PERSONAS_DATA = {
       "May undervalue the need for creativity and open discussion, potentially stifling innovation",
       "Can be so focused on tasks that they forget to relax and enjoy the collaborative process",
     ],
+    recommendations: [
+      8, 6, 4
+    ]
   },
   "The Creative Maverick": {
     tagLine: "Unleashing innovation and fresh ideas in meetings.",
@@ -142,7 +163,7 @@ export const PERSONAS_DATA = {
       'Traits: As "The Creative Maverick," you excel at thinking outside the box and bringing fresh ideas to the table. 🎨✨ Your innovative approach ignites creativity and sparks inspiration among team members. Your ability to challenge the status quo and embrace unconventional solutions leads to breakthrough moments in meetings. 🚀🌟',
       'Collaborating with "The Celebration Connoisseur" amplifies the impact of your creative ideas. Their love for acknowledging achievements aligns perfectly with your innovative mindset, resulting in memorable celebrations that highlight the team\'s successes. 🎉🎨🌟',
       'Furthermore, your synergy with "The Dynamic Agenda Artist" fosters a meeting environment that is both visually captivating and conceptually stimulating. Your fresh ideas, combined with their visually appealing agendas, create a dynamic and engaging atmosphere that keeps participants inspired and invested. 🎨📝🚀',
-      'In summary, as "The Creative Maverick," your ability to think outside the box and generate innovative ideas adds a dynamic element to meetings. Your collaboration with "The Celebration Connoisseur" and "The Dynamic Agenda Artist" creates a harmonious blend of creativity and structure, making meetings both exciting and purposeful. 🎨🚀🌟'
+      'In summary, as "The Creative Maverick," your ability to think outside the box and generate innovative ideas adds a dynamic element to meetings. Your collaboration with "The Celebration Connoisseur" and "The Dynamic Agenda Artist" creates a harmonious blend of creativity and structure, making meetings both exciting and purposeful. 🎨🚀🌟',
     ],
     strengths: [
       "Maverick of creativity, always breaking the mold and bringing fresh ideas to meetings",
@@ -153,6 +174,9 @@ export const PERSONAS_DATA = {
       "May get lost in the realm of imagination, sometimes neglecting practical considerations",
       "Can become too attached to novelty, risking overlooking tried and tested solutions",
     ],
+    recommendations: [
+      1, 2, 4
+    ]
   },
   "The Chill Zen Master": {
     tagLine: "Creating a relaxed and open meeting atmosphere.",
@@ -160,7 +184,7 @@ export const PERSONAS_DATA = {
       'Traits: As "The Chill Zen Master," you believe in fostering a relaxed and stress-free meeting environment. 🧘🌿 Your calm demeanor and ability to create a comfortable space allow team members to feel at ease and encourage open communication. Your presence brings a sense of tranquility to meetings, enabling productive discussions and effective decision-making. 🗣️✨',
       'Collaborating with "The Conflict Whisperer" enhances the peaceful atmosphere you strive to create. Their talent for resolving conflicts aligns with your belief in open communication, resulting in a harmonious meeting environment where differences are respectfully addressed and resolved. 🤝🔮🧘',
       'Additionally, your synergy with "The Dynamic Agenda Artist" contributes to a well-structured and mindful meeting experience. Their visually appealing agendas complement your relaxed approach, ensuring that meetings flow smoothly while maintaining a sense of calm and focus. 🎨📝🌿',
-      'In summary, as "The Chill Zen Master," you bring a sense of tranquility and balance to meetings. Your collaboration with "The Conflict Whisperer" and "The Dynamic Agenda Artist" creates an environment where open communication, structure, and mindfulness coexist, leading to productive and harmonious discussions. 🧘🗣️✨'
+      'In summary, as "The Chill Zen Master," you bring a sense of tranquility and balance to meetings. Your collaboration with "The Conflict Whisperer" and "The Dynamic Agenda Artist" creates an environment where open communication, structure, and mindfulness coexist, leading to productive and harmonious discussions. 🧘🗣️✨',
     ],
     strengths: [
       "Zen master of serenity, creating a relaxed and stress-free meeting environment",
@@ -171,13 +195,16 @@ export const PERSONAS_DATA = {
       "May prioritize harmony over addressing conflicts or critical discussions",
       "Can sometimes become too laid-back, potentially slowing down decision-making processes",
     ],
+    recommendations: [
+      1, 3, 4
+    ]
   },
   "The Spontaneous Frame Jumper": {
     tagLine: "Adding playful and spontaneous elements to meeting backgrounds.",
     description: [
       'Traits: As "The Spontaneous Frame Jumper," you enjoy adding an element of playfulness and fun to meetings by using different frames for meeting backgrounds. 🖼️🎉 Your ability to create a visually dynamic environment sparks joy and energizes participants. Your unique combination of traits brings a fresh and unpredictable element to meetings. 🎨🚀🌟',
       'You work best with "The Dynamic Agenda Artist," "The Celebration Connoisseur," and "The Creative Maverick" as they embrace creativity and spontaneity. Your collaboration adds an extra layer of fun and excitement to their contributions, creating an atmosphere that is both engaging and lively. 🎨🖼️🎉',
-      'In summary, as "The Spontaneous Frame Jumper," you inject a sense of playfulness and novelty into meetings. Your collaboration with "The Dynamic Agenda Artist," "The Celebration Connoisseur," and "The Creative Maverick" creates a dynamic and unpredictable meeting experience that keeps participants inspired and entertained. 🖼️🎉🎨'
+      'In summary, as "The Spontaneous Frame Jumper," you inject a sense of playfulness and novelty into meetings. Your collaboration with "The Dynamic Agenda Artist," "The Celebration Connoisseur," and "The Creative Maverick" creates a dynamic and unpredictable meeting experience that keeps participants inspired and entertained. 🖼️🎉🎨',
     ],
     strengths: [
       "The wild card of meetings, injecting playfulness by jumping between different background frames",
@@ -185,5 +212,60 @@ export const PERSONAS_DATA = {
       "Ensures meetings are as entertaining",
     ],
     weaknesses: [],
-  }
+    recommendations: [
+      1, 2, 6
+    ]
+  },
 };
+
+export const LOOPIN_FEATURES = [
+  {
+    name:"Share meeting summaries with Team",
+    details:'This feature allows the Celebration Connoisseur to share meeting summaries that highlight achievements and milestones, fostering a sense of accomplishment and recognition among the team',
+    summary: 'Shared Summaries',
+    id:1
+  },
+  {
+    name:'Customise your summaries using meeting-specific templates',
+    details: '',
+    summary: 'Meeting Summary Type',
+    id:2
+  },
+  {
+    name:'Invite your team to collaborate on the meeting summaries - Real Time! 👥',
+    details: '',
+    summary: 'Real Time Collabotaion',
+    id:3
+  },
+  {
+    name:'Recap previous meeting notes',
+    details: '',
+    summary: 'Get context using Recap',
+    id:4
+  },
+  {
+    name:'Send summaries to meeting participants over Email, Slack, or Notion',
+    details: '',
+    summary: 'Send Notes to team',
+    id:5
+  },
+  {
+    name:'Follow up on action items over Slack',
+    details: '',
+    summary: 'Follow Up on Slack',
+    id:6
+  },
+  {
+    name:' Ask Loopin AI for more meeting insights',
+    details: '',
+    summary: 'Get Meeting Insights',
+    id:7
+  },
+  {
+    name:'Record and summarize meetings using CE',
+    details: '',
+    summary: 'Automated Meeting Summaries',
+    id:8
+  }
+
+]

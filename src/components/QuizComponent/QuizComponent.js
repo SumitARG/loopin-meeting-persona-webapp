@@ -5,7 +5,6 @@ import LEFT_IMAGE_3 from "../../assets/images/quiz_image_left_3.png";
 import LEFT_IMAGE_4 from "../../assets/images/quiz_image_left_4.png";
 import LEFT_IMAGE_5 from "../../assets/images/quiz_image_left_5.png";
 import LEFT_IMAGE_6 from "../../assets/images/quiz_image_left_6.png";
-import RIGHT_IMAGE_1 from "../../assets/images/quiz_image_right_1.png";
 import QuestionComponent from "./QuestionComponent/QuestionComponent";
 import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
 import {
@@ -13,11 +12,29 @@ import {
   QUIZ_IMAGES,
   ROUTE_NAMES,
 } from "../../config/Constants";
-import FooterComponent from "../FooterComponent/FooterComponent";
+// import FooterComponent from "../FooterComponent/FooterComponent";
 import { useNavigate } from "react-router";
+import { useState } from "react";
 
-const QuizComponent = ({ questionNumber, questionDetails }) => {
+const QuizComponent = ({
+  questionNumber,
+  questionDetails,
+  submitClicked,
+  onSubmitClicked,
+}) => {
   const navigate = useNavigate();
+
+  const [disabled, setDisabled] = useState(questionNumber !== 6 ? true : false);
+
+  window.addEventListener("storage", () => {
+    if (
+      JSON.parse(localStorage.getItem(LOCAL_STORAGE.ANSWERS_STORAGE))[
+        questionNumber
+      ] !== ""
+    ) {
+      setDisabled(false);
+    }
+  });
 
   const nextButtonClickHandler = (event) => {
     event.preventDefault();
@@ -28,6 +45,7 @@ const QuizComponent = ({ questionNumber, questionDetails }) => {
         (item) => answers[item] === "" || answers[item] === null
       );
       if (notAnsweredIndex > -1) {
+        onSubmitClicked(true);
         document
           .getElementsByClassName(
             "quiz-screen  question-" + (notAnsweredIndex + 1)
@@ -37,11 +55,13 @@ const QuizComponent = ({ questionNumber, questionDetails }) => {
         navigate(`/${ROUTE_NAMES.SUBMIT_FORM_ROUTE}`);
       }
     } else {
-      document
-        .getElementsByClassName(
-          "quiz-screen question-" + (questionNumber + 1)
-        )[0]
-        ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      if (!disabled) {
+        document
+          .getElementsByClassName(
+            "quiz-screen question-" + (questionNumber + 1)
+          )[0]
+          ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      }
     }
   };
 
@@ -67,7 +87,7 @@ const QuizComponent = ({ questionNumber, questionDetails }) => {
   const getRightImage = () => {
     switch (questionNumber) {
       case 1:
-        return RIGHT_IMAGE_1;
+        return QUIZ_IMAGES.RIGHT_IMAGE_1;
       case 2:
         return QUIZ_IMAGES.RIGHT_IMAGE_2;
       case 3:
@@ -91,12 +111,18 @@ const QuizComponent = ({ questionNumber, questionDetails }) => {
         </div>
         <div className="question-container">
           <QuestionComponent questionTemplate={questionDetails} />
+          {(submitClicked && disabled) && (
+            <label className="question-warning">
+              *This question is mandatory
+            </label>
+          )}
           <div
             className="button-section"
             onClick={(event) => nextButtonClickHandler(event)}
           >
             <PrimaryButton
               buttonLabel={questionNumber === 6 ? "Submit" : "Next"}
+              disabled={disabled}
             />
           </div>
         </div>
