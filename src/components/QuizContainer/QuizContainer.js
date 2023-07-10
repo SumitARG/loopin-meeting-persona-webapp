@@ -1,7 +1,11 @@
+import { useState } from "react";
 import QuizComponent from "../QuizComponent/QuizComponent";
 import "./QuizContainer.scss";
 
 const QuizContainer = () => {
+
+  const [submitClicked, setSubmitClicked] = useState();
+
   let questionsList = {
     question1: {
       question:
@@ -139,26 +143,32 @@ const QuizContainer = () => {
       <QuizComponent
         questionNumber={1}
         questionDetails={questionsList.question1}
+        submitClicked = {submitClicked}
       />
       <QuizComponent
         questionNumber={2}
         questionDetails={questionsList.question2}
+        submitClicked = {submitClicked}
       />
       <QuizComponent
         questionNumber={3}
         questionDetails={questionsList.question3}
+        submitClicked = {submitClicked}
       />
       <QuizComponent
         questionNumber={4}
         questionDetails={questionsList.question4}
+        submitClicked = {submitClicked}
       />
       <QuizComponent
         questionNumber={5}
         questionDetails={questionsList.question5}
+        submitClicked = {submitClicked}
       />
       <QuizComponent
         questionNumber={6}
         questionDetails={questionsList.question6}
+        onSubmitClicked={setSubmitClicked}
       />
     </div>
   );

@@ -23,3 +23,12 @@
     font-weight: 600;
     line-height: 32px
 }
+
+.disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.disabled:hover {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%), #7660FF;
+}

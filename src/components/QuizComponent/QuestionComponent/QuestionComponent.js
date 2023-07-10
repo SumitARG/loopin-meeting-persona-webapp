@@ -13,13 +13,13 @@ const QuestionComponent = ({ questionTemplate }) => {
       answerSet[questionTemplate.questionId] = questionTemplate.options.find(
         (item) => item.optionId === selectedId
       )?.optionContent || "";
-      console.log("This is executed", answerSet);
       localStorage.setItem(
         LOCAL_STORAGE.ANSWERS_STORAGE,
         JSON.stringify(answerSet)
       );
+      window.dispatchEvent(new Event("storage"));
     }
-  }, [selectedId]);
+  }, [selectedId, questionTemplate]);
 
   return (
     <div className="question-section">
