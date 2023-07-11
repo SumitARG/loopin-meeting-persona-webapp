@@ -1,6 +1,6 @@
 import { collection, getDocs, query } from "firebase/firestore";
 import html2canvas from "html2canvas";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PERSONA_1 from "../../assets/images/The Captivating Creator.png";
 import PERSONA_5 from "../../assets/images/The Celebration Connoisseur.png";
 import PERSONA_8 from "../../assets/images/The Chill Zen Master.png";
