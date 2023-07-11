@@ -1,15 +1,15 @@
 import { collection, getDocs, query } from "firebase/firestore";
 import html2canvas from "html2canvas";
 import React, { useEffect, useState } from "react";
-import PERSONA_1 from "../../assets/images/The Captivating Creator.png";
-import PERSONA_5 from "../../assets/images/The Celebration Connoisseur.png";
-import PERSONA_8 from "../../assets/images/The Chill Zen Master.png";
-import PERSONA_3 from "../../assets/images/The Conflict Whisperer.png";
-import PERSONA_7 from "../../assets/images/The Creative Maverick.png";
-import PERSONA_2 from "../../assets/images/The Dynamic Agenda Artist.png";
-import PERSONA_4 from "../../assets/images/The Outcome Orchestrator.png";
-import PERSONA_9 from "../../assets/images/The Spontaneous Frame Jumper.png";
-import PERSONA_6 from "../../assets/images/The Super Productive Prodigy.png";
+import PERSONA_1 from "../../assets/images/The Captivating Creator.svg";
+import PERSONA_5 from "../../assets/images/The Celebration Connoisseur.svg";
+import PERSONA_8 from "../../assets/images/The Chill Zen Master.svg";
+import PERSONA_3 from "../../assets/images/The Conflict Whisperer.svg";
+import PERSONA_7 from "../../assets/images/The Creative Maverick.svg";
+import PERSONA_2 from "../../assets/images/The Dynamic Agenda Artist.svg";
+import PERSONA_4 from "../../assets/images/The Outcome Orchestrator.svg";
+import PERSONA_9 from "../../assets/images/The Spontaneous Frame Jumper.svg";
+import PERSONA_6 from "../../assets/images/The Super Productive Prodigy.svg";
 import { LOCAL_STORAGE, PERSONAS_DATA } from "../../config/Constants";
 import { firestore } from "../../firebase_setup/firebase";
 import Insights from "../CommonComponents/Insights/Insights";
@@ -57,6 +57,7 @@ const ProfileViewCoponent = () => {
   };
 
   useEffect(() => {
+    document.getElementById("header").scrollIntoView({ block: "nearest", behavior: "smooth" })
     getLeaderboardData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -128,9 +129,6 @@ const ProfileViewCoponent = () => {
           <SecondaryHyperlink linkLabel="Share on Twitter" />
           <SecondaryHyperlink linkLabel="Share a link to the quiz" />
         </div>
-      </div>
-      <div className="seprator">
-        <hr className="seprator-line" />
       </div>
       <div className="description-section">
         <div className="persona-description">

@@ -4,7 +4,7 @@ import COMPANY_NAME from "../../assets/images/Group.svg"
 
 const HeaderComponent = () => {
   return (
-    <div className="header">
+    <div className="header" id="header">
         <img src={COMPANY_LOGO} alt="Logo" />
         <img src={COMPANY_NAME} alt="Name" />
     </div>

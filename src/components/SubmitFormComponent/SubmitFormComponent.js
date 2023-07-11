@@ -5,10 +5,7 @@ import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router";
 import LEFT_IMAGE from "../../assets/images/form_image_left.png";
 import RIGHT_IMAGE from "../../assets/lotties/form_image_right.json";
-import {
-  LOCAL_STORAGE,
-  ROUTE_NAMES
-} from "../../config/Constants";
+import { LOCAL_STORAGE, ROUTE_NAMES } from "../../config/Constants";
 import { firestore } from "../../firebase_setup/firebase";
 import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
 import "./SubmitFormComponent.scss";
@@ -122,10 +119,6 @@ const SubmitFormComponent = () => {
               profile filled with resources to help you be the champion of your
               next team meeting 🎳🏆.
             </p>{" "}
-            <p>
-              🔮 Add your work email id, if you are interested to see other
-              personalities from your company.
-            </p>
           </div>
           <div className="form-section">
             <FormGroup className="form-layout">
@@ -157,20 +150,32 @@ const SubmitFormComponent = () => {
                 />
               </div>
               <div>
-                <Form.Label>Email</Form.Label>
+                <Form.Label>Work Email</Form.Label>
                 <Form.Control
                   as="input"
                   type="email"
                   onChange={(event) => formEditHandler(event, "email")}
-                  placeholder="Your email address"
+                  placeholder="Your work email address"
                   isInvalid={!formDataValidators.email}
                 />
               </div>
             </FormGroup>
           </div>
+          <div className="form-content">
+            <p>
+              🔮 Add your work email id, if you are interested to see other
+              personalities from your company.
+            </p>
+          </div>
         </div>
         <div className="right-image">
-          <Player className="quiz-lottie" src={RIGHT_IMAGE} alt="form right" loop autoplay/>
+          <Player
+            className="quiz-lottie"
+            src={RIGHT_IMAGE}
+            alt="form right"
+            loop
+            autoplay
+          />
         </div>
       </div>
       <div className="button-section">
