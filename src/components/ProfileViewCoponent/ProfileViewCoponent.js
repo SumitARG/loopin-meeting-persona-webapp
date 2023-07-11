@@ -157,7 +157,7 @@ const ProfileViewCoponent = () => {
           <hr className="seprator-line" />
         </div>
         {Object.keys(PERSONAS_DATA).map((item, i) => (
-          <div key={i}>
+          <React.Fragment key={i}>
             <div className="leaderboard-content">
               <div
                 className="img-div"
@@ -175,7 +175,7 @@ const ProfileViewCoponent = () => {
             <div className="leaderboard-persona-separator">
               <hr className="seprator-line" />
             </div>
-          </div>
+          </React.Fragment>
         ))}
       </div>
     </div>
