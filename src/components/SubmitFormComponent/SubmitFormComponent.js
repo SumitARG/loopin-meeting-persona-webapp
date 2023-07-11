@@ -10,9 +10,13 @@ import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { FormGroup } from "react-bootstrap";
+import { collection, doc, setDoc } from "firebase/firestore";
+import { firestore } from "../../firebase_setup/firebase";
 
 const SubmitFormComponent = () => {
   const navigate = useNavigate();
+
+  const userRef = collection(firestore, "Users");
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -26,7 +30,7 @@ const SubmitFormComponent = () => {
     lastName: true,
     company: true,
     email: true,
-  })
+  });
 
   const formEditHandler = (event, field) => {
     let tempFormData = formData;
@@ -34,31 +38,38 @@ const SubmitFormComponent = () => {
     setFormData(tempFormData);
   };
 
-  const formSubmitHandler = () => {
-
-    let validEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const formSubmitHandler = async () => {
+    let validEmailRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     let checkValidation = formDataValidators;
 
-    if(formData.company.trim() === ""){
+    if (formData.company.trim() === "") {
       checkValidation.company = false;
     }
-    if(formData.firstName.trim() === ""){
+    if (formData.firstName.trim() === "") {
       checkValidation.firstName = false;
     }
-    if(formData.lastName.trim() === ""){
+    if (formData.lastName.trim() === "") {
       checkValidation.lastName = false;
     }
-    if(!formData.email.match(validEmailRegex)){
+    if (!formData.email.match(validEmailRegex)) {
       checkValidation.email = false;
     }
 
     setFormDataValidators(checkValidation);
-    console.log(formDataValidators);
 
     // if(checkValidation.company && checkValidation.firstName && checkValidation.lastName && checkValidation.email){
-      let computedPersona = getPersona();
-      localStorage.setItem(LOCAL_STORAGE.COMPUTED_PERSONA, computedPersona);
-      navigate(`/${ROUTE_NAMES.COMPUTED_PERSONA_ROUTE}`);
+    let computedPersona = getPersona();
+    localStorage.setItem(LOCAL_STORAGE.COMPUTED_PERSONA, computedPersona);
+    localStorage.setItem(LOCAL_STORAGE.USER_EMAIL, formData.email);
+    await setDoc(doc(userRef), {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      company: formData.company,
+      email: formData.email,
+      persona: computedPersona,
+    });
+    navigate(`/${ROUTE_NAMES.COMPUTED_PERSONA_ROUTE}`);
     // }
   };
 

@@ -18,7 +18,7 @@ const LoopinRecommendations = ({ recommendations }) => {
       <div className="loopin-recommendations">
         {recommendations.map((featureId) => {
           let feature = LOOPIN_FEATURES.find((item) => item.id === featureId);
-          return <FeatureCard feature={feature} />;
+          return <FeatureCard key={featureId} feature={feature} />;
         })}
       </div>
     </div>

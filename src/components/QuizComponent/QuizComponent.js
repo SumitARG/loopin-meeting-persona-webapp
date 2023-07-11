@@ -5,6 +5,7 @@ import LEFT_IMAGE_3 from "../../assets/images/quiz_image_left_3.png";
 import LEFT_IMAGE_4 from "../../assets/images/quiz_image_left_4.png";
 import LEFT_IMAGE_5 from "../../assets/images/quiz_image_left_5.png";
 import LEFT_IMAGE_6 from "../../assets/images/quiz_image_left_6.png";
+import RIGHT_IMAGE_2 from "../../assets/images/quiz_image_right_2.svg";
 import QuestionComponent from "./QuestionComponent/QuestionComponent";
 import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
 import {
@@ -89,7 +90,7 @@ const QuizComponent = ({
       case 1:
         return QUIZ_IMAGES.RIGHT_IMAGE_1;
       case 2:
-        return QUIZ_IMAGES.RIGHT_IMAGE_2;
+        return RIGHT_IMAGE_2;
       case 3:
         return QUIZ_IMAGES.RIGHT_IMAGE_3;
       case 4:
