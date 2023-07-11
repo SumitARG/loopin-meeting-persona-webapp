@@ -1,17 +1,18 @@
-import "./SubmitFormComponent.scss";
+import { collection, doc, setDoc } from "firebase/firestore";
+import { useState } from "react";
+import { FormGroup } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import { useNavigate } from "react-router";
 import LEFT_IMAGE from "../../assets/images/form_image_left.png";
+import RIGHT_IMAGE from "../../assets/lotties/form_image_right.json";
 import {
   LOCAL_STORAGE,
-  ROUTE_NAMES,
-  SUBMIT_FORM_IMAGES,
+  ROUTE_NAMES
 } from "../../config/Constants";
-import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
-import Form from "react-bootstrap/Form";
-import { useState } from "react";
-import { useNavigate } from "react-router";
-import { FormGroup } from "react-bootstrap";
-import { collection, doc, setDoc } from "firebase/firestore";
 import { firestore } from "../../firebase_setup/firebase";
+import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
+import "./SubmitFormComponent.scss";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 const SubmitFormComponent = () => {
   const navigate = useNavigate();
@@ -169,7 +170,7 @@ const SubmitFormComponent = () => {
           </div>
         </div>
         <div className="right-image">
-          <img src={SUBMIT_FORM_IMAGES.RIGHT_IMAGE} alt="form right" />
+          <Player className="quiz-lottie" src={RIGHT_IMAGE} alt="form right" loop autoplay/>
         </div>
       </div>
       <div className="button-section">

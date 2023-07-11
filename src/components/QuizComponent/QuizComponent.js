@@ -1,21 +1,26 @@
-import "./QuizComponent.scss";
 import LEFT_IMAGE_1 from "../../assets/images/quiz_image_left_1.png";
 import LEFT_IMAGE_2 from "../../assets/images/quiz_image_left_2.png";
 import LEFT_IMAGE_3 from "../../assets/images/quiz_image_left_3.png";
 import LEFT_IMAGE_4 from "../../assets/images/quiz_image_left_4.png";
 import LEFT_IMAGE_5 from "../../assets/images/quiz_image_left_5.png";
 import LEFT_IMAGE_6 from "../../assets/images/quiz_image_left_6.png";
-import RIGHT_IMAGE_2 from "../../assets/images/quiz_image_right_2.svg";
-import QuestionComponent from "./QuestionComponent/QuestionComponent";
-import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
+import RIGHT_IMAGE_1 from "../../assets/lotties/quiz_lottie_right_1.json";
+import RIGHT_IMAGE_2 from "../../assets/lotties/quiz_lottie_right_2.json";
+import RIGHT_IMAGE_3 from "../../assets/lotties/quiz_lottie_right_3.json";
+import RIGHT_IMAGE_4 from "../../assets/lotties/quiz_lottie_right_4.json";
+import RIGHT_IMAGE_5 from "../../assets/lotties/quiz_lottie_right_5.json";
+import RIGHT_IMAGE_6 from "../../assets/lotties/quiz_lottie_right_6.json";
 import {
   LOCAL_STORAGE,
-  QUIZ_IMAGES,
-  ROUTE_NAMES,
+  ROUTE_NAMES
 } from "../../config/Constants";
+import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
+import QuestionComponent from "./QuestionComponent/QuestionComponent";
+import "./QuizComponent.scss";
 // import FooterComponent from "../FooterComponent/FooterComponent";
-import { useNavigate } from "react-router";
+import { Player } from "@lottiefiles/react-lottie-player";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const QuizComponent = ({
   questionNumber,
@@ -88,17 +93,17 @@ const QuizComponent = ({
   const getRightImage = () => {
     switch (questionNumber) {
       case 1:
-        return QUIZ_IMAGES.RIGHT_IMAGE_1;
+        return RIGHT_IMAGE_1;
       case 2:
         return RIGHT_IMAGE_2;
       case 3:
-        return QUIZ_IMAGES.RIGHT_IMAGE_3;
+        return RIGHT_IMAGE_3;
       case 4:
-        return QUIZ_IMAGES.RIGHT_IMAGE_4;
+        return RIGHT_IMAGE_4;
       case 5:
-        return QUIZ_IMAGES.RIGHT_IMAGE_5;
+        return RIGHT_IMAGE_5;
       case 6:
-        return QUIZ_IMAGES.RIGHT_IMAGE_6;
+        return RIGHT_IMAGE_6;
       default:
         return "";
     }
@@ -128,7 +133,7 @@ const QuizComponent = ({
           </div>
         </div>
         <div className="right-image">
-          <img src={getRightImage()} alt="right" />
+          <Player className="quiz-lottie" src={getRightImage()} loop autoplay/>
         </div>
       </div>
       {/* {questionNumber === 6 && <FooterComponent />} */}
