@@ -1,6 +1,6 @@
 import { collection, getDocs, query } from "firebase/firestore";
 import html2canvas from "html2canvas";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PERSONA_1 from "../../assets/images/The Captivating Creator.png";
 import PERSONA_5 from "../../assets/images/The Celebration Connoisseur.png";
 import PERSONA_8 from "../../assets/images/The Chill Zen Master.png";
@@ -157,7 +157,7 @@ const ProfileViewCoponent = () => {
           <hr className="seprator-line" />
         </div>
         {Object.keys(PERSONAS_DATA).map((item, i) => (
-          <div key={i}>
+          <React.Fragment key={i}>
             <div className="leaderboard-content">
               <div
                 className="img-div"
@@ -175,7 +175,7 @@ const ProfileViewCoponent = () => {
             <div className="leaderboard-persona-separator">
               <hr className="seprator-line" />
             </div>
-          </div>
+          </React.Fragment>
         ))}
       </div>
     </div>
