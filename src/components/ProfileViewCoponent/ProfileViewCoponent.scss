@@ -1,4 +1,4 @@
-.profile-view-component{
+.profile-view-component {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,13 +88,14 @@
     justify-content: space-between;
 }
 
-.seprator{
+.seprator {
     width: 90%;
-    .seprator-line{
-        border: 1px solid #EAECF0;
-    }
 }
 
+.seprator-line {
+    border: 1px solid #EAECF0;
+    margin: 0px;
+}
 
 .description-section {
     display: flex;
@@ -116,14 +117,76 @@
     line-height: 28px;
 }
 
-.strength-insights{
+.strength-insights {
     width: 80%;
 }
 
-.weakness-insights{
+.weakness-insights {
     width: 80%;
 }
 
-.loopin-container{
+.loopin-container {
+    width: 80%;
+}
+
+.leaderboard {
+    display: flex;
+    padding: 64px;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    border-radius: 16px;
+    width: 80%;
+}
+
+.leaderboard-header {
+    color: #1B1B1B;
+    text-align: center;
+    // font-family: Inter;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.leaderboard-separator {
+    width: 100%;
+}
+
+.leaderboard-content {
+    width: 80%;
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50%;
+
+    .img-div {
+        width: 203.382px;
+        height: 203.382px;
+        border-radius: 50%;
+    }
+
+    .persona-name {
+        color: #000;
+        // font-family: Manrope;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        display: contents;
+    }
+
+    .count {
+        color: #000;
+        font-family: Mansalva;
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+.leaderboard-persona-separator{
     width: 80%;
 }

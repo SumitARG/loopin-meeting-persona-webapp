@@ -1,3 +1,5 @@
+import { collection, getDocs, query } from "firebase/firestore";
+import html2canvas from "html2canvas";
 import { useEffect, useState } from "react";
 import PERSONA_1 from "../../assets/images/The Captivating Creator.png";
 import PERSONA_5 from "../../assets/images/The Celebration Connoisseur.png";
@@ -9,14 +11,12 @@ import PERSONA_4 from "../../assets/images/The Outcome Orchestrator.png";
 import PERSONA_9 from "../../assets/images/The Spontaneous Frame Jumper.png";
 import PERSONA_6 from "../../assets/images/The Super Productive Prodigy.png";
 import { LOCAL_STORAGE, PERSONAS_DATA } from "../../config/Constants";
+import { firestore } from "../../firebase_setup/firebase";
 import Insights from "../CommonComponents/Insights/Insights";
 import LoopinRecommendations from "../CommonComponents/LoopinRecommendations/LoopinRecommendations";
 import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
 import SecondaryHyperlink from "../CommonComponents/SecondaryHyperlink/SecondaryHyperlink";
 import "./ProfileViewCoponent.scss";
-import html2canvas from "html2canvas";
-import { collection, getDoc, getDocs, query, where } from "firebase/firestore";
-import { firestore } from "../../firebase_setup/firebase";
 
 const ProfileViewCoponent = () => {
   const [computedPersona] = useState(
@@ -27,21 +27,39 @@ const ProfileViewCoponent = () => {
 
   const [personaDetails] = useState(PERSONAS_DATA[computedPersona]);
 
-  const [leaderboard, setLeaderboard] = useState([])
+  const [leaderboard, setLeaderboard] = useState([]);
 
-  const getLeaderboardData = async() => {
+  const getLeaderboardData = async () => {
     const q = query(usersRef);
-    const qSnapshot = await getDocs(q)
-    console.log("leaderboard => ", qSnapshot);
-    qSnapshot.forEach(doc => {
-      console.log(doc.data())
-    })
-    setLeaderboard(q);
-  }
+    const qSnapshot = await getDocs(q);
+    const tempRecords = [];
+    qSnapshot.forEach((doc) => {
+      let data = doc.data();
+      if (
+        data.email
+          .split("@")[1]
+          .includes(
+            localStorage.getItem(LOCAL_STORAGE.USER_EMAIL).split("@")[1]
+          )
+      ) {
+        tempRecords.push(data);
+      }
+    });
+    let tempLederboard = {};
+    tempRecords.forEach((item) => {
+      if (tempLederboard[item.persona]) {
+        tempLederboard[item.persona] = tempLederboard[item.persona] + 1;
+      } else {
+        tempLederboard[item.persona] = 1;
+      }
+    });
+    setLeaderboard(tempLederboard);
+  };
 
   useEffect(() => {
     getLeaderboardData();
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const downloadHandler = () => {
     const input = document.getElementById("mainApp");
@@ -53,15 +71,15 @@ const ProfileViewCoponent = () => {
       link.download = `${computedPersona}.png`;
       link.href = imgData;
       link.click();
-      // document.body.appendChild;
-      // const pdf = new jsPDF('p', 'pt', 'a4', false);
-      // pdf.addImage(imgData, 'PNG', 0, 0, 600, 0);
-      // pdf.save(`${computedPersona}.pdf`);
     });
   };
 
-  const getPersonaImage = () => {
-    switch (computedPersona) {
+  const getPersonaImage = (inputPersona = "") => {
+    let switchItem = computedPersona;
+    if (inputPersona !== "") {
+      switchItem = inputPersona;
+    }
+    switch (switchItem) {
       case "The Captivating Creator":
         return PERSONA_1;
       case "The Dynamic Agenda Artist":
@@ -132,6 +150,33 @@ const ProfileViewCoponent = () => {
         <LoopinRecommendations
           recommendations={personaDetails.recommendations}
         />
+      </div>
+      <div className="leaderboard">
+        <div className="leaderboard-header">Your Company leaderboard</div>
+        <div className="leaderboard-separator">
+          <hr className="seprator-line" />
+        </div>
+        {Object.keys(PERSONAS_DATA).map((item, i) => (
+          <div key={i}>
+            <div className="leaderboard-content">
+              <div
+                className="img-div"
+                style={{
+                  backgroundColor: `${i % 2 === 0 ? "#d9edff" : "#fff3d9"}`,
+                }}
+              >
+                <img src={getPersonaImage(item)} alt="persona" />
+              </div>
+              <div className="persona-name">"{item}"</div>
+              <div className="count">
+                x{leaderboard[item] > 0 ? leaderboard[item] : 0}
+              </div>
+            </div>
+            <div className="leaderboard-persona-separator">
+              <hr className="seprator-line" />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

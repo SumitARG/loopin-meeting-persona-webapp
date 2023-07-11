@@ -12,7 +12,7 @@ const Insights = ({insightType, content}) => {
             {insightType === "strengths" ? 'Key Strengths' : 'Weaknesses to conquer'}
             </div>
             <div className="insights-content-body">
-                {content.map(item => <li>{item}</li>)}
+                {content.map((item,i) => <li key={i}>{item}</li>)}
             </div>
         </div>
         <div className="insights-image">

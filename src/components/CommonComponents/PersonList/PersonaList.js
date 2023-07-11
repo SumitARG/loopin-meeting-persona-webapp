@@ -57,9 +57,9 @@ const PersonaList = ({closePersonaList}) => {
         <hr />
       </div>
       <div className="persona-list-content">
-        {personaList.map((item) => {
+        {personaList.map((item, i) => {
           return (
-            <>
+            <div key={i}>
               <div className="persona">
                 <div className="persona-image">
                   <img src={getPersonaImage(item)} alt={`persona ${item}`} />
@@ -74,7 +74,7 @@ const PersonaList = ({closePersonaList}) => {
               <div className="persona-separator">
                 <hr />
               </div>
-            </>
+            </div>
           );
         })}
       </div>
