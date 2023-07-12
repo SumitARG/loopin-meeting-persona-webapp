@@ -36,7 +36,7 @@ const ProfileViewCoponent = () => {
     qSnapshot.forEach((doc) => {
       let data = doc.data();
       if (
-        data.email
+        data.email !== "" && data.email
           .split("@")[1]
           .includes(
             localStorage.getItem(LOCAL_STORAGE.USER_EMAIL).split("@")[1]

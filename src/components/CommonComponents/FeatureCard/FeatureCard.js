@@ -6,6 +6,7 @@ import FEATURE_IMAGE_4 from "../../../assets/images/Recap Previous notes.svg";
 import FEATURE_IMAGE_8 from "../../../assets/images/Record and Summarise Meetings.svg";
 import FEATURE_IMAGE_5 from "../../../assets/images/Send Summaries over Email, Slack, Notion.svg";
 import FEATURE_IMAGE_1 from "../../../assets/images/Share Meeting Summaries with team.svg";
+import { LOOPIN_REDIRCT_URL } from "../../../config/Constants";
 import "./FeatureCard.scss";
 
 const FeatureCard = ({ feature }) => {
@@ -42,7 +43,7 @@ const FeatureCard = ({ feature }) => {
       <div className="feature-content">
         <img src={getImage()} alt="background" />
       </div>
-      <div className="feature-summary">
+      <div className="feature-summary" onClick={() => window.open(LOOPIN_REDIRCT_URL,"_blank")}>
         <div className="summary-text">{feature?.summary}</div>
       </div>
     </div>

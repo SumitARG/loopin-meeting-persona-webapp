@@ -24,7 +24,7 @@ const LandingPageComponent = ({showPersona}) => {
   }
 
   return (
-    <div className="container landing-page-container">
+    <div className="landing-page-container">
       <div className="home-page-header">What is your meeting persona? 🚀</div>
       <div className="landing-page-content">
         <p>
