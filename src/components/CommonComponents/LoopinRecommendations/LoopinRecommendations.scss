@@ -54,9 +54,18 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .loopin-recommendations{
     display: flex;
     justify-content: space-between;
+}
+
+@media only screen and (max-width: 820px){
+    .loopin-recommendations{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
 }

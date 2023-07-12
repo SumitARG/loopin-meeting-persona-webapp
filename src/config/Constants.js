@@ -270,3 +270,5 @@ export const LOOPIN_FEATURES = [
   }
 
 ]
+
+export const LOOPIN_REDIRCT_URL = "https://loopinhq.com?meeting-personality";
