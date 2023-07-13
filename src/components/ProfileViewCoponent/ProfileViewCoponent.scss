@@ -85,9 +85,12 @@
 }
 
 .secondary-actions {
-    width: 50%;
+    width: 20%;
     display: flex;
     justify-content: space-between;
+    img{
+        cursor: pointer;
+    }
 }
 
 .seprator {

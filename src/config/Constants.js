@@ -51,7 +51,8 @@ export const PERSONAS_DATA = {
     ],
     recommendations: [
       1, 2, 3
-    ]
+    ],
+    tweetHighlights: "My meeting highlights will leave a lasting impression"
   },
   "The Dynamic Agenda Artist": {
     tagLine: "Igniting excitement with visually captivating meeting agendas.",
@@ -72,7 +73,8 @@ export const PERSONAS_DATA = {
     ],
     recommendations: [
       8, 5, 4
-    ]
+    ],
+    tweetHighlights: "My visually appealing agendas make meetings engaging"
   },
   "The Conflict Whisperer": {
     tagLine: "Harmonizing discussions and resolving conflicts with finesse.",
@@ -92,7 +94,8 @@ export const PERSONAS_DATA = {
     ],
     recommendations: [
       1, 6, 7
-    ]
+    ],
+    tweetHighlights: "I excel at resolving conflicts and creating harmonious meeting atmospheres"
   },
   "The Outcome Orchestrator": {
     tagLine: "Driving progress and results through meticulous follow-up.",
@@ -113,7 +116,8 @@ export const PERSONAS_DATA = {
     ],
     recommendations: [
       5, 6, 4
-    ]
+    ],
+    tweetHighlights: "My focus on results keeps meetings on track"
   },
   "The Celebration Connoisseur": {
     tagLine:
@@ -134,7 +138,8 @@ export const PERSONAS_DATA = {
     ],
     recommendations: [
       1, 5, 3
-    ]
+    ],
+    tweetHighlights: "I love acknowledging achievements in meetings"
   },
   "The Super Productive Prodigy": {
     tagLine: "Maximizing efficiency and goal-oriented productivity.",
@@ -156,7 +161,8 @@ export const PERSONAS_DATA = {
     ],
     recommendations: [
       8, 6, 4
-    ]
+    ],
+    tweetHighlights:"My efficiency-driven approach enhances meeting productivity"
   },
   "The Creative Maverick": {
     tagLine: "Unleashing innovation and fresh ideas in meetings.",
@@ -177,7 +183,8 @@ export const PERSONAS_DATA = {
     ],
     recommendations: [
       1, 2, 4
-    ]
+    ],
+    tweetHighlights:"I bring fresh ideas and ignite creativity in meetings"
   },
   "The Chill Zen Master": {
     tagLine: "Creating a relaxed and open meeting atmosphere.",
@@ -198,7 +205,8 @@ export const PERSONAS_DATA = {
     ],
     recommendations: [
       1, 3, 4
-    ]
+    ],
+    tweetHighlights:"I create a relaxed meeting environment for open communication"
   },
   "The Spontaneous Frame Jumper": {
     tagLine: "Adding playful and spontaneous elements to meeting backgrounds.",
@@ -215,7 +223,8 @@ export const PERSONAS_DATA = {
     weaknesses: [],
     recommendations: [
       1, 2, 6
-    ]
+    ],
+    tweetHighlights:"I add playfulness to meetings with different frames"
   },
 };
 
@@ -272,3 +281,5 @@ export const LOOPIN_FEATURES = [
 ]
 
 export const LOOPIN_REDIRCT_URL = "https://loopinhq.com?meeting-personality";
+
+export const LOOPIN_QUIZ_SHARE_LINK = "https://loopin-meeting-persona-webapp.vercel.app/home";
