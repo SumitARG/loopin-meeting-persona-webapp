@@ -3,15 +3,15 @@ import LEFT_IMAGE from "../../../assets/images/persona_list_left_image.png";
 import RIGHT_IMAGE from "../../../assets/images/persona_list_right_image.png";
 import BOTTOM_IMAGE from "../../../assets/images/persona_list_bottom_image.png";
 import { PERSONAS_DATA } from "../../../config/Constants";
-import PERSONA_1 from "../../../assets/images/The Captivating Creator.svg";
-import PERSONA_5 from "../../../assets/images/The Celebration Connoisseur.svg";
-import PERSONA_8 from "../../../assets/images/The Chill Zen Master.svg";
-import PERSONA_3 from "../../../assets/images/The Conflict Whisperer.svg";
-import PERSONA_7 from "../../../assets/images/The Creative Maverick.svg";
-import PERSONA_2 from "../../../assets/images/The Dynamic Agenda Artist.svg";
-import PERSONA_4 from "../../../assets/images/The Outcome Orchestrator.svg";
-import PERSONA_9 from "../../../assets/images/The Spontaneous Frame Jumper.svg";
-import PERSONA_6 from "../../../assets/images/The Super Productive Prodigy.svg";
+import PERSONA_1 from "../../../assets/images/The Captivating Creator.png";
+import PERSONA_5 from "../../../assets/images/The Celebration Connoisseur.png";
+import PERSONA_8 from "../../../assets/images/The Chill Zen Master.png";
+import PERSONA_3 from "../../../assets/images/The Conflict Whisperer.png";
+import PERSONA_7 from "../../../assets/images/The Creative Maverick.png";
+import PERSONA_2 from "../../../assets/images/The Dynamic Agenda Artist.png";
+import PERSONA_4 from "../../../assets/images/The Outcome Orchestrator.png";
+import PERSONA_9 from "../../../assets/images/The Spontaneous Frame Jumper.png";
+import PERSONA_6 from "../../../assets/images/The Super Productive Prodigy.png";
 import "./PersonaList.scss";
 
 const PersonaList = ({closePersonaList}) => {

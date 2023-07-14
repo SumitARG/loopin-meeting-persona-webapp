@@ -2,18 +2,18 @@ import { collection, getDocs, query } from "firebase/firestore";
 import html2canvas from "html2canvas";
 import React, { useEffect, useState } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import LINKEDIN_ICON from "../../assets/images/Linkedin.svg";
-import PERSONA_1 from "../../assets/images/The Captivating Creator.svg";
-import PERSONA_5 from "../../assets/images/The Celebration Connoisseur.svg";
-import PERSONA_8 from "../../assets/images/The Chill Zen Master.svg";
-import PERSONA_3 from "../../assets/images/The Conflict Whisperer.svg";
-import PERSONA_7 from "../../assets/images/The Creative Maverick.svg";
-import PERSONA_2 from "../../assets/images/The Dynamic Agenda Artist.svg";
-import PERSONA_4 from "../../assets/images/The Outcome Orchestrator.svg";
-import PERSONA_9 from "../../assets/images/The Spontaneous Frame Jumper.svg";
-import PERSONA_6 from "../../assets/images/The Super Productive Prodigy.svg";
-import SHARE_ICON from "../../assets/images/share_icon.svg";
-import TWITTER_ICON from "../../assets/images/twitter.svg";
+import LINKEDIN_ICON from "../../assets/images/svg/Linkedin.svg";
+import PERSONA_1 from "../../assets/images/The Captivating Creator.png";
+import PERSONA_5 from "../../assets/images/The Celebration Connoisseur.png";
+import PERSONA_8 from "../../assets/images/The Chill Zen Master.png";
+import PERSONA_3 from "../../assets/images/The Conflict Whisperer.png";
+import PERSONA_7 from "../../assets/images/The Creative Maverick.png";
+import PERSONA_2 from "../../assets/images/The Dynamic Agenda Artist.png";
+import PERSONA_4 from "../../assets/images/The Outcome Orchestrator.png";
+import PERSONA_9 from "../../assets/images/The Spontaneous Frame Jumper.png";
+import PERSONA_6 from "../../assets/images/The Super Productive Prodigy.png";
+import SHARE_ICON from "../../assets/images/svg/share_icon.svg";
+import TWITTER_ICON from "../../assets/images/svg/twitter.svg";
 import {
   LOCAL_STORAGE,
   LOOPIN_QUIZ_SHARE_LINK,
@@ -214,7 +214,7 @@ const ProfileViewCoponent = () => {
                   backgroundColor: `${i % 2 === 0 ? "#d9edff" : "#fff3d9"}`,
                 }}
               >
-                <img src={getPersonaImage(item)} alt="persona" />
+                <img className="img-div" src={getPersonaImage(item)} alt="persona" />
               </div>
               <div className="persona-name">"{item}"</div>
               <div className="count">
