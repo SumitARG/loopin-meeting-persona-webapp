@@ -1,6 +1,6 @@
 import "./HeaderComponent.scss";
-import COMPANY_LOGO from "../../assets/images/Vector.svg"
-import COMPANY_NAME from "../../assets/images/Group.svg"
+import COMPANY_LOGO from "../../assets/images/svg/Vector.svg"
+import COMPANY_NAME from "../../assets/images/svg/Group.svg"
 import { LOOPIN_REDIRCT_URL } from "../../config/Constants";
 
 const HeaderComponent = () => {

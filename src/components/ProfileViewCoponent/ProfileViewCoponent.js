@@ -1,21 +1,28 @@
 import { collection, getDocs, query } from "firebase/firestore";
 import html2canvas from "html2canvas";
 import React, { useEffect, useState } from "react";
-import PERSONA_1 from "../../assets/images/The Captivating Creator.svg";
-import PERSONA_5 from "../../assets/images/The Celebration Connoisseur.svg";
-import PERSONA_8 from "../../assets/images/The Chill Zen Master.svg";
-import PERSONA_3 from "../../assets/images/The Conflict Whisperer.svg";
-import PERSONA_7 from "../../assets/images/The Creative Maverick.svg";
-import PERSONA_2 from "../../assets/images/The Dynamic Agenda Artist.svg";
-import PERSONA_4 from "../../assets/images/The Outcome Orchestrator.svg";
-import PERSONA_9 from "../../assets/images/The Spontaneous Frame Jumper.svg";
-import PERSONA_6 from "../../assets/images/The Super Productive Prodigy.svg";
-import { LOCAL_STORAGE, PERSONAS_DATA } from "../../config/Constants";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import LINKEDIN_ICON from "../../assets/images/svg/Linkedin.svg";
+import PERSONA_1 from "../../assets/images/The Captivating Creator.png";
+import PERSONA_5 from "../../assets/images/The Celebration Connoisseur.png";
+import PERSONA_8 from "../../assets/images/The Chill Zen Master.png";
+import PERSONA_3 from "../../assets/images/The Conflict Whisperer.png";
+import PERSONA_7 from "../../assets/images/The Creative Maverick.png";
+import PERSONA_2 from "../../assets/images/The Dynamic Agenda Artist.png";
+import PERSONA_4 from "../../assets/images/The Outcome Orchestrator.png";
+import PERSONA_9 from "../../assets/images/The Spontaneous Frame Jumper.png";
+import PERSONA_6 from "../../assets/images/The Super Productive Prodigy.png";
+import SHARE_ICON from "../../assets/images/svg/share_icon.svg";
+import TWITTER_ICON from "../../assets/images/svg/twitter.svg";
+import {
+  LOCAL_STORAGE,
+  LOOPIN_QUIZ_SHARE_LINK,
+  PERSONAS_DATA,
+} from "../../config/Constants";
 import { firestore } from "../../firebase_setup/firebase";
 import Insights from "../CommonComponents/Insights/Insights";
 import LoopinRecommendations from "../CommonComponents/LoopinRecommendations/LoopinRecommendations";
 import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
-import SecondaryHyperlink from "../CommonComponents/SecondaryHyperlink/SecondaryHyperlink";
 import "./ProfileViewCoponent.scss";
 
 const ProfileViewCoponent = () => {
@@ -29,6 +36,12 @@ const ProfileViewCoponent = () => {
 
   const [leaderboard, setLeaderboard] = useState([]);
 
+  const getTooltip = (tooltipText) => (
+    <Tooltip id="tooltip">
+      <strong>{tooltipText}</strong>
+    </Tooltip>
+  );
+
   const getLeaderboardData = async () => {
     const q = query(usersRef);
     const qSnapshot = await getDocs(q);
@@ -36,7 +49,8 @@ const ProfileViewCoponent = () => {
     qSnapshot.forEach((doc) => {
       let data = doc.data();
       if (
-        data.email !== "" && data.email
+        data.email !== "" &&
+        data.email
           .split("@")[1]
           .includes(
             localStorage.getItem(LOCAL_STORAGE.USER_EMAIL).split("@")[1]
@@ -57,7 +71,9 @@ const ProfileViewCoponent = () => {
   };
 
   useEffect(() => {
-    document.getElementById("header").scrollIntoView({ block: "nearest", behavior: "smooth" })
+    document
+      .getElementById("header")
+      .scrollIntoView({ block: "nearest", behavior: "smooth" });
     getLeaderboardData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -119,16 +135,51 @@ const ProfileViewCoponent = () => {
         </div>
         <div className="persona-name">{computedPersona}</div>
         <div className="persona-tagline">{personaDetails.tagLine}</div>
+        <div className="secondary-actions">
+          <OverlayTrigger
+            placement="bottom"
+            overlay={getTooltip("Share your profile")}
+          >
+            <a
+              className="twitter-share-button"
+              target="_blank"
+              rel="noreferrer"
+              href={
+                "https://twitter.com/intent/tweet?size=large&text=Thrilled to discover I'm '" +
+                computedPersona +
+                "'! " +
+                PERSONAS_DATA[computedPersona]?.tweetHighlights +
+                ". Take the meeting personality quiz and find out your style too!&hashtags=AI,Meetings&url=https://personality.loopinhq.com&via=Loopin&related=twitterapi,twitter"
+              }
+            >
+              <img src={TWITTER_ICON} alt="Twitter" />
+            </a>
+          </OverlayTrigger>
+          <OverlayTrigger
+            placement="bottom"
+            overlay={getTooltip("Share on Linkedin")}
+          >
+            <img src={LINKEDIN_ICON} alt="Linkedin" />
+          </OverlayTrigger>
+          <OverlayTrigger placement="bottom" overlay={getTooltip("Copy URL")}>
+            <img
+              src={SHARE_ICON}
+              alt="share"
+              onClick={() =>
+                navigator.clipboard.writeText(LOOPIN_QUIZ_SHARE_LINK)
+              }
+            />
+          </OverlayTrigger>
+
+          {/* <SecondaryHyperlink linkLabel="Share on Linkedin" />
+          <SecondaryHyperlink linkLabel="Share on Twitter" />
+          <SecondaryHyperlink linkLabel="Share a link to the quiz" /> */}
+        </div>
         <PrimaryButton
           buttonLabel="Download Profile"
           buttonWidth="385"
           onButtonClick={downloadHandler}
         />
-        <div className="secondary-actions">
-          <SecondaryHyperlink linkLabel="Share on Linkedin" />
-          <SecondaryHyperlink linkLabel="Share on Twitter" />
-          <SecondaryHyperlink linkLabel="Share a link to the quiz" />
-        </div>
       </div>
       <div className="description-section">
         <div className="persona-description">
@@ -163,7 +214,7 @@ const ProfileViewCoponent = () => {
                   backgroundColor: `${i % 2 === 0 ? "#d9edff" : "#fff3d9"}`,
                 }}
               >
-                <img src={getPersonaImage(item)} alt="persona" />
+                <img className="img-div" src={getPersonaImage(item)} alt="persona" />
               </div>
               <div className="persona-name">"{item}"</div>
               <div className="count">

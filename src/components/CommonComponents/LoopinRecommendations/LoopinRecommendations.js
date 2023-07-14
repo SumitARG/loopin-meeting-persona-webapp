@@ -1,5 +1,5 @@
 import "./LoopinRecommendations.scss";
-import LOOPIN_VECTOR from "../../../assets/images/loopin_vector.svg";
+import LOOPIN_VECTOR from "../../../assets/images/svg/loopin_vector.svg";
 import FeatureCard from "../FeatureCard/FeatureCard";
 import { LOOPIN_FEATURES, LOOPIN_REDIRCT_URL } from "../../../config/Constants";
 

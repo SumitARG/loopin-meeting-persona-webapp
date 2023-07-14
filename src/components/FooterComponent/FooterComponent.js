@@ -1,5 +1,5 @@
 import "./FooterComponent.scss";
-import COMPANY_LOGO from "../../assets/images/loopin_logo.svg";
+import COMPANY_LOGO from "../../assets/images/svg/loopin_logo.svg";
 import { LOOPIN_REDIRCT_URL } from "../../config/Constants";
 
 const FooterComponent = () => {

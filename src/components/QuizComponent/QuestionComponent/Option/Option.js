@@ -1,5 +1,5 @@
 import "./Option.scss";
-import SELECTED_ICON from "../../../../assets/images/option_selected.svg";
+import SELECTED_ICON from "../../../../assets/images/svg/option_selected.svg";
 
 const Option = ({ content, id, isSelected, setSelected }) => {
   const optionSelectHandler = () => {

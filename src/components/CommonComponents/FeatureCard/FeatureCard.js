@@ -1,11 +1,11 @@
-import FEATURE_IMAGE_7 from "../../../assets/images/Ask LoopinAI.svg";
-import FEATURE_IMAGE_2 from "../../../assets/images/Customise your meeting summaries.svg";
-import FEATURE_IMAGE_6 from "../../../assets/images/Follow up on Slack.svg";
-import FEATURE_IMAGE_3 from "../../../assets/images/Real Time Collaboration.svg";
-import FEATURE_IMAGE_4 from "../../../assets/images/Recap Previous notes.svg";
-import FEATURE_IMAGE_8 from "../../../assets/images/Record and Summarise Meetings.svg";
-import FEATURE_IMAGE_5 from "../../../assets/images/Send Summaries over Email, Slack, Notion.svg";
-import FEATURE_IMAGE_1 from "../../../assets/images/Share Meeting Summaries with team.svg";
+import FEATURE_IMAGE_7 from "../../../assets/images/svg/Ask LoopinAI.svg";
+import FEATURE_IMAGE_2 from "../../../assets/images/svg/Customise your meeting summaries.svg";
+import FEATURE_IMAGE_6 from "../../../assets/images/svg/Follow up on Slack.svg";
+import FEATURE_IMAGE_3 from "../../../assets/images/svg/Real Time Collaboration.svg";
+import FEATURE_IMAGE_4 from "../../../assets/images/svg/Recap Previous notes.svg";
+import FEATURE_IMAGE_8 from "../../../assets/images/svg/Record and Summarise Meetings.svg";
+import FEATURE_IMAGE_5 from "../../../assets/images/svg/Send Summaries over Email, Slack, Notion.svg";
+import FEATURE_IMAGE_1 from "../../../assets/images/svg/Share Meeting Summaries with team.svg";
 import { LOOPIN_REDIRCT_URL } from "../../../config/Constants";
 import "./FeatureCard.scss";
 
