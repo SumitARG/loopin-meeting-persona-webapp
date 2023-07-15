@@ -12,6 +12,7 @@ import PERSONA_2 from "../../assets/images/The Dynamic Agenda Artist.png";
 import PERSONA_4 from "../../assets/images/The Outcome Orchestrator.png";
 import PERSONA_9 from "../../assets/images/The Spontaneous Frame Jumper.png";
 import PERSONA_6 from "../../assets/images/The Super Productive Prodigy.png";
+import PERSONA_10 from "../../assets/images/The Unconventional Visionary.png";
 import SHARE_ICON from "../../assets/images/svg/share_icon.svg";
 import TWITTER_ICON from "../../assets/images/svg/twitter.svg";
 import {
@@ -115,6 +116,8 @@ const ProfileViewCoponent = () => {
         return PERSONA_8;
       case "The Spontaneous Frame Jumper":
         return PERSONA_9;
+      case "The Unconventional Visionary":
+        return PERSONA_10;
       default:
         return "";
     }
@@ -149,7 +152,7 @@ const ProfileViewCoponent = () => {
                 computedPersona +
                 "'! " +
                 PERSONAS_DATA[computedPersona]?.tweetHighlights +
-                ". Take the meeting personality quiz and find out your style too!&hashtags=AI,Meetings&url=https://personality.loopinhq.com&via=Loopin&related=twitterapi,twitter"
+                ". Take the meeting personality quiz and find out your style too!&hashtags=AI,Meetings&url=https://personality.loopinhq.com&via=LoopinHQ&related=twitterapi,twitter"
               }
             >
               <img src={TWITTER_ICON} alt="Twitter" />
@@ -214,7 +217,11 @@ const ProfileViewCoponent = () => {
                   backgroundColor: `${i % 2 === 0 ? "#d9edff" : "#fff3d9"}`,
                 }}
               >
-                <img className="img-div" src={getPersonaImage(item)} alt="persona" />
+                <img
+                  className="img-div"
+                  src={getPersonaImage(item)}
+                  alt="persona"
+                />
               </div>
               <div className="persona-name">"{item}"</div>
               <div className="count">
