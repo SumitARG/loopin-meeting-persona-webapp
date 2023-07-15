@@ -50,7 +50,7 @@ export const PERSONAS_DATA = {
       "Can be overly focused on entertainment, potentially neglecting important details",
     ],
     recommendations: [
-      1, 2, 3
+      1, 2, 8
     ],
     tweetHighlights: "My meeting highlights will leave a lasting impression"
   },
@@ -93,7 +93,7 @@ export const PERSONAS_DATA = {
       "Can struggle with more assertive decision-making in high-pressure situations",
     ],
     recommendations: [
-      1, 6, 7
+      8, 7, 1
     ],
     tweetHighlights: "I excel at resolving conflicts and creating harmonious meeting atmospheres"
   },
@@ -115,7 +115,7 @@ export const PERSONAS_DATA = {
       "Can be so goal-oriented that they forget to celebrate and enjoy the process",
     ],
     recommendations: [
-      5, 6, 4
+      5, 8, 4
     ],
     tweetHighlights: "My focus on results keeps meetings on track"
   },
@@ -137,7 +137,7 @@ export const PERSONAS_DATA = {
       "Can sometimes go overboard with festivities, causing distractions from the meeting's purpose",
     ],
     recommendations: [
-      1, 5, 3
+      1, 5, 8
     ],
     tweetHighlights: "I love acknowledging achievements in meetings"
   },
@@ -160,7 +160,7 @@ export const PERSONAS_DATA = {
       "Can be so focused on tasks that they forget to relax and enjoy the collaborative process",
     ],
     recommendations: [
-      8, 6, 4
+      8, 7, 4
     ],
     tweetHighlights:"My efficiency-driven approach enhances meeting productivity"
   },
@@ -182,7 +182,7 @@ export const PERSONAS_DATA = {
       "Can become too attached to novelty, risking overlooking tried and tested solutions",
     ],
     recommendations: [
-      1, 2, 4
+      8, 2, 4
     ],
     tweetHighlights:"I bring fresh ideas and ignite creativity in meetings"
   },
@@ -204,7 +204,7 @@ export const PERSONAS_DATA = {
       "Can sometimes become too laid-back, potentially slowing down decision-making processes",
     ],
     recommendations: [
-      1, 3, 4
+      1, 3, 8
     ],
     tweetHighlights:"I create a relaxed meeting environment for open communication"
   },
@@ -222,11 +222,35 @@ export const PERSONAS_DATA = {
     ],
     weaknesses: [],
     recommendations: [
-      1, 2, 6
+      1, 2, 8
     ],
     tweetHighlights:"I add playfulness to meetings with different frames"
   },
+  "The Unconventional Visionary": {
+    tagLine: "Embracing a different approach and thinking outside the box.",
+    description: [
+      'Traits: As "The Unconventional Visionary," you embrace a different approach and excel at thinking outside the box. 🌌🚀 Your ability tochallenge conventional thinking and explore innovative ideas sets you apart. Your visionary mindset ignites creativity and inspires others topush boundaries and explore new possibilities. 🧠✨',
+      'Your collaboration with diverse personalities becomes a catalyst for groundbreaking discussions and transformative outcomes. Your unconventional thinking complements "The Creative Maverick," enhancing the generation of fresh ideas and sparking creative synergy. 🎨🚀',
+      'Together with "The Dynamic Agenda Artist," your visionary mindset helps shape meeting agendas that are not only visually captivating but also conceptually stimulating, ensuring that meetings are thought-provoking and purposeful. 📝🌌🧠',
+      'In summary, as "The Unconventional Visionary," you bring a unique perspective and a spirit of innovation to meetings. Your collaboration with other personalities opens up new horizons, fostering creativity, and driving transformative discussions. 🌌🚀🧠'
+    ],
+    strengths: [
+      "Embraces a different approach and thinks outside the box",
+      "Generates innovative and groundbreaking ideas during meetings",
+      "Challenges the status quo and inspires others with their visionary thinking",
+    ],
+    weaknesses: [
+      "May struggle to communicate ideas effectively, leading to confusion among team members",
+      "Can be resistant to traditional methods and may overlook practical considerations at times"
+    ],
+    recommendations: [
+      8, 2, 1
+    ],
+    tweetHighlights:"My unconventional approach brings innovation to meetings"
+  },
 };
+
+// 10th Persona -> recommendations -> 8, 2, 1
 
 export const LOOPIN_FEATURES = [
   {

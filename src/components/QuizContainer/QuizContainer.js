@@ -26,6 +26,11 @@ const QuizContainer = () => {
             "c) I create fun and engaging comics or memes to capture the meeting highlights.",
           optionId: 3,
         },
+        {
+          optionContent:
+            "d) I channel my inner maverick and don't take any meeting notes at all! 🚫📝",
+          optionId: 4,
+        },
       ],
       questionId: 1,
     },
@@ -48,6 +53,11 @@ const QuizContainer = () => {
             "c) I prefer an impromptu approach & surprise everyone with a mystery agenda during the meeting. 🎩",
           optionId: 3,
         },
+        {
+          optionContent:
+            "d) I have a superpower of showing up unprepared in most of my meetings!🚫📚",
+          optionId: 4,
+        }
       ],
       questionId: 2,
     },
@@ -70,6 +80,11 @@ const QuizContainer = () => {
             "c) I diffuse tension with humor and bring a lighthearted perspective to resolve conflicts. 😄",
           optionId: 3,
         },
+        {
+          optionContent:
+            "d) I become an escape artist and find a way to magically escape from conflicts! 🎩🐇",
+          optionId: 4,
+        }
       ],
       questionId: 3,
     },
@@ -91,6 +106,11 @@ const QuizContainer = () => {
             "c) I create personalized memes or GIFs to summarize the meeting outcomes and share them. 🎭",
           optionId: 3,
         },
+        {
+          optionContent:
+            "d) I embrace my rebellious side and never follow up because \"follow-ups\" just aren't my thing! 🚫🔍",
+          optionId: 4,
+        }
       ],
       questionId: 4,
     },
@@ -111,6 +131,11 @@ const QuizContainer = () => {
             "c) I believe in fostering a relaxed and stress-free meeting environment. 😌",
           optionId: 3,
         },
+        {
+          optionContent:
+            "d) I have no preference because I'm a wild card and go with the flow! 🃏🌊",
+          optionId: 4,
+        }
       ],
       questionId: 5,
     },
@@ -133,6 +158,11 @@ const QuizContainer = () => {
             "c) Random frames - I paint my meetings with playful strokes, adding a touch of fun to the conversation. 🎨",
           optionId: 3,
         },
+        {
+          optionContent:
+            "d) I always keep my video turned off and maintain an aura of mystery! 📹🔒",
+          optionId: 4,
+        }
       ],
       questionId: 6,
     },

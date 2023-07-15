@@ -12,9 +12,10 @@ import PERSONA_2 from "../../../assets/images/The Dynamic Agenda Artist.png";
 import PERSONA_4 from "../../../assets/images/The Outcome Orchestrator.png";
 import PERSONA_9 from "../../../assets/images/The Spontaneous Frame Jumper.png";
 import PERSONA_6 from "../../../assets/images/The Super Productive Prodigy.png";
+import PERSONA_10 from "../../../assets/images/The Unconventional Visionary.png";
 import "./PersonaList.scss";
 
-const PersonaList = ({closePersonaList}) => {
+const PersonaList = ({ closePersonaList }) => {
   const [personaList] = useState(Object.keys(PERSONAS_DATA));
 
   const getPersonaImage = (persona) => {
@@ -37,6 +38,8 @@ const PersonaList = ({closePersonaList}) => {
         return PERSONA_8;
       case "The Spontaneous Frame Jumper":
         return PERSONA_9;
+      case "The Unconventional Visionary":
+        return PERSONA_10;
       default:
         return "";
     }

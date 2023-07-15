@@ -81,6 +81,7 @@ const SubmitFormComponent = () => {
     } else if (answers[3].includes("c)")) {
       return "The Conflict Whisperer";
     } else if (
+      answers[1].includes("c)") &&
       answers[2].includes("a)") &&
       answers[4].includes("a)") &&
       answers[5].includes("a)")
