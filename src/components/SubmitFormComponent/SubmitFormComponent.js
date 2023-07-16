@@ -101,7 +101,14 @@ const SubmitFormComponent = () => {
       return "The Chill Zen Master";
     } else if (answers[6].includes("c)")) {
       return "The Spontaneous Frame Jumper";
-    } else {
+    } else if (
+      answers[1].includes("d)") &&
+      answers[2].includes("d)") &&
+      answers[4].includes("d)")
+    ) {
+      return "The Unconventional Visionary";
+    }
+    else {
       return "Issuficient Data! It would be great if you take the Quiz again 🚀";
     }
   };
