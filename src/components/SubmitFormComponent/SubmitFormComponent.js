@@ -1,5 +1,5 @@
 import { collection, doc, setDoc } from "firebase/firestore";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FormGroup } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router";
@@ -16,59 +16,74 @@ const SubmitFormComponent = () => {
 
   const userRef = collection(firestore, "Users");
 
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    company: "",
-    email: "",
-  });
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [company, setCompany] = useState("");
+  const [email, setEmail] = useState("");
+  const [firstNameValidator, setFirstNameValidator] = useState(true);
+  const [lastNameValidator, setLastNameValidator] = useState(true);
+  const [companyValidator, setCompanyValidator] = useState(true);
+  const [emailValidator, setEmailValidator] = useState(true);
 
-  const [formDataValidators, setFormDataValidators] = useState({
-    firstName: true,
-    lastName: true,
-    company: true,
-    email: true,
-  });
+  useEffect(() => {
+    console.log(firstName);
+    if (firstName.trim() === "") {
+      setFirstNameValidator(false);
+    }
+    else{
+      setFirstNameValidator(true);
+    }
+  }, [firstName]);
 
-  const formEditHandler = (event, field) => {
-    let tempFormData = formData;
-    tempFormData[field] = event.target.value;
-    setFormData(tempFormData);
-  };
+  useEffect(() => {
+    if (lastName.trim() === "") {
+      setLastNameValidator(false);
+    }
+    else{
+      setLastNameValidator(true);
+    }
+  }, [lastName]);
 
-  const formSubmitHandler = async () => {
+  useEffect(() => {
+    if (company.trim() === "") {
+      setCompanyValidator(false);
+    }
+    else{
+      setCompanyValidator(true);
+    }
+  }, [company]);
+
+  useEffect(() => {
     let validEmailRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    let checkValidation = formDataValidators;
 
-    if (formData.company.trim() === "") {
-      checkValidation.company = false;
+    if (!email.match(validEmailRegex)) {
+      setEmailValidator(false);
     }
-    if (formData.firstName.trim() === "") {
-      checkValidation.firstName = false;
+    else{
+      setEmailValidator(true);
     }
-    if (formData.lastName.trim() === "") {
-      checkValidation.lastName = false;
-    }
-    if (!formData.email.match(validEmailRegex)) {
-      checkValidation.email = false;
-    }
+  }, [email]);
 
-    setFormDataValidators(checkValidation);
-
-    // if(checkValidation.company && checkValidation.firstName && checkValidation.lastName && checkValidation.email){
-    let computedPersona = getPersona();
-    localStorage.setItem(LOCAL_STORAGE.COMPUTED_PERSONA, computedPersona);
-    localStorage.setItem(LOCAL_STORAGE.USER_EMAIL, formData.email);
-    await setDoc(doc(userRef), {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      company: formData.company,
-      email: formData.email,
-      persona: computedPersona,
-    });
-    navigate(`/${ROUTE_NAMES.COMPUTED_PERSONA_ROUTE}`);
-    // }
+  const formSubmitHandler = async () => {
+    if (
+      firstNameValidator &&
+      lastNameValidator &&
+      companyValidator &&
+      emailValidator
+    ) {
+      let computedPersona = getPersona();
+      localStorage.setItem(LOCAL_STORAGE.COMPUTED_PERSONA, computedPersona);
+      localStorage.setItem(LOCAL_STORAGE.USER_EMAIL, email);
+      await setDoc(doc(userRef), {
+        firstName: firstName,
+        lastName: lastName,
+        company: company,
+        email: email,
+        persona: computedPersona,
+      });
+      navigate(`/${ROUTE_NAMES.COMPUTED_PERSONA_ROUTE}`);
+    }
   };
 
   const getPersona = () => {
@@ -107,8 +122,7 @@ const SubmitFormComponent = () => {
       answers[4].includes("d)")
     ) {
       return "The Unconventional Visionary";
-    }
-    else {
+    } else {
       return "Issuficient Data! It would be great if you take the Quiz again 🚀";
     }
   };
@@ -131,40 +145,40 @@ const SubmitFormComponent = () => {
           <div className="form-section">
             <FormGroup className="form-layout">
               <div>
-                <Form.Label>First Name</Form.Label>
+                <Form.Label>First Name*</Form.Label>
                 <Form.Control
                   type="text"
-                  onChange={(event) => formEditHandler(event, "firstName")}
+                  onChange={(event) => setFirstName(event.target.value)}
                   placeholder="Enter your first name"
-                  isInvalid={!formDataValidators.firstName}
+                  isInvalid={!firstNameValidator}
                 />
               </div>
               <div>
-                <Form.Label>Last Name</Form.Label>
+                <Form.Label>Last Name*</Form.Label>
                 <Form.Control
                   type="text"
-                  onChange={(event) => formEditHandler(event, "lastName")}
+                  onChange={(event) => setLastName(event.target.value)}
                   placeholder="Enter your last name"
-                  isInvalid={!formDataValidators.lastName}
+                  isInvalid={!lastNameValidator}
                 />
               </div>
               <div>
-                <Form.Label>Company</Form.Label>
+                <Form.Label>Company*</Form.Label>
                 <Form.Control
                   type="text"
-                  onChange={(event) => formEditHandler(event, "company")}
+                  onChange={(event) => setCompany(event.target.value)}
                   placeholder="What is the name of your org"
-                  isInvalid={!formDataValidators.company}
+                  isInvalid={!companyValidator}
                 />
               </div>
               <div>
-                <Form.Label>Work Email</Form.Label>
+                <Form.Label>Work Email*</Form.Label>
                 <Form.Control
                   as="input"
                   type="email"
-                  onChange={(event) => formEditHandler(event, "email")}
+                  onChange={(event) => setEmail(event.target.value)}
                   placeholder="Your work email address"
-                  isInvalid={!formDataValidators.email}
+                  isInvalid={!emailValidator}
                 />
               </div>
             </FormGroup>
