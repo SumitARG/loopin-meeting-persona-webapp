@@ -7,7 +7,10 @@ const Option = ({ content, id, isSelected, setSelected }) => {
   };
 
   return (
-    <div className="option" onClick={optionSelectHandler}>
+    <div
+      className={`option ${isSelected ? "active" : ""}`}
+      onClick={optionSelectHandler}
+    >
       <div className="option-content">{content}</div>
       <div className="selection-indicator">
         {

@@ -2,6 +2,7 @@ import { collection, getDocs, query } from "firebase/firestore";
 import html2canvas from "html2canvas";
 import React, { useEffect, useState } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import ShareLink from "react-linkedin-share-link";
 import LINKEDIN_ICON from "../../assets/images/svg/Linkedin.svg";
 import PERSONA_1 from "../../assets/images/The Captivating Creator.png";
 import PERSONA_5 from "../../assets/images/The Celebration Connoisseur.png";
@@ -36,6 +37,8 @@ const ProfileViewCoponent = () => {
   const [personaDetails] = useState(PERSONAS_DATA[computedPersona]);
 
   const [leaderboard, setLeaderboard] = useState([]);
+
+  const [copyMessageFlag, setCopyMessageFlag] = useState(false);
 
   const getTooltip = (tooltipText) => (
     <Tooltip id="tooltip">
@@ -158,25 +161,34 @@ const ProfileViewCoponent = () => {
               <img src={TWITTER_ICON} alt="Twitter" />
             </a>
           </OverlayTrigger>
-          <OverlayTrigger
-            placement="bottom"
-            overlay={getTooltip("Share on Linkedin")}
-          >
-            <img src={LINKEDIN_ICON} alt="Linkedin" />
-          </OverlayTrigger>
-          <OverlayTrigger placement="bottom" overlay={getTooltip("Copy URL")}>
-            <img
-              src={SHARE_ICON}
-              alt="share"
-              onClick={() =>
-                navigator.clipboard.writeText(LOOPIN_QUIZ_SHARE_LINK)
-              }
-            />
-          </OverlayTrigger>
-
-          {/* <SecondaryHyperlink linkLabel="Share on Linkedin" />
-          <SecondaryHyperlink linkLabel="Share on Twitter" />
-          <SecondaryHyperlink linkLabel="Share a link to the quiz" /> */}
+          <ShareLink link={LOOPIN_QUIZ_SHARE_LINK}>
+            {(link) => (
+              <OverlayTrigger
+                placement="bottom"
+                overlay={getTooltip("Share on Linkedin")}
+              >
+                <a href={link} target="_blank" rel="noreferrer">
+                  <img src={LINKEDIN_ICON} alt="Linkedin" />
+                </a>
+              </OverlayTrigger>
+            )}
+          </ShareLink>
+          <div className="share-copy">
+            <OverlayTrigger placement="bottom" overlay={getTooltip("Copy URL")}>
+              <img
+                src={SHARE_ICON}
+                alt="share"
+                onClick={() => {
+                  navigator.clipboard.writeText(LOOPIN_QUIZ_SHARE_LINK);
+                  setCopyMessageFlag(true);
+                  setTimeout(() => {
+                    setCopyMessageFlag(false);
+                  }, 5000);
+                }}
+              />
+            </OverlayTrigger>
+            {copyMessageFlag && <div className="copied-message">Copied</div>}
+          </div>
         </div>
         <PrimaryButton
           buttonLabel="Download Profile"

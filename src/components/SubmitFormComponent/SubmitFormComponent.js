@@ -17,38 +17,42 @@ const SubmitFormComponent = () => {
   const userRef = collection(firestore, "Users");
 
   const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  // const [lastName, setLastName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [firstNameValidator, setFirstNameValidator] = useState(true);
-  const [lastNameValidator, setLastNameValidator] = useState(true);
+  // const [lastNameValidator, setLastNameValidator] = useState(true);
   const [companyValidator, setCompanyValidator] = useState(true);
   const [emailValidator, setEmailValidator] = useState(true);
+
+  useEffect(() => {
+    document
+      .getElementById("header")
+      .scrollIntoView({ block: "nearest", behavior: "smooth" });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     console.log(firstName);
     if (firstName.trim() === "") {
       setFirstNameValidator(false);
-    }
-    else{
+    } else {
       setFirstNameValidator(true);
     }
   }, [firstName]);
 
-  useEffect(() => {
-    if (lastName.trim() === "") {
-      setLastNameValidator(false);
-    }
-    else{
-      setLastNameValidator(true);
-    }
-  }, [lastName]);
+  // useEffect(() => {
+  //   if (lastName.trim() === "") {
+  //     setLastNameValidator(false);
+  //   } else {
+  //     setLastNameValidator(true);
+  //   }
+  // }, [lastName]);
 
   useEffect(() => {
     if (company.trim() === "") {
       setCompanyValidator(false);
-    }
-    else{
+    } else {
       setCompanyValidator(true);
     }
   }, [company]);
@@ -59,8 +63,7 @@ const SubmitFormComponent = () => {
 
     if (!email.match(validEmailRegex)) {
       setEmailValidator(false);
-    }
-    else{
+    } else {
       setEmailValidator(true);
     }
   }, [email]);
@@ -68,7 +71,6 @@ const SubmitFormComponent = () => {
   const formSubmitHandler = async () => {
     if (
       firstNameValidator &&
-      lastNameValidator &&
       companyValidator &&
       emailValidator
     ) {
@@ -77,7 +79,6 @@ const SubmitFormComponent = () => {
       localStorage.setItem(LOCAL_STORAGE.USER_EMAIL, email);
       await setDoc(doc(userRef), {
         firstName: firstName,
-        lastName: lastName,
         company: company,
         email: email,
         persona: computedPersona,
@@ -153,7 +154,7 @@ const SubmitFormComponent = () => {
                   isInvalid={!firstNameValidator}
                 />
               </div>
-              <div>
+              {/* <div>
                 <Form.Label>Last Name*</Form.Label>
                 <Form.Control
                   type="text"
@@ -161,7 +162,7 @@ const SubmitFormComponent = () => {
                   placeholder="Enter your last name"
                   isInvalid={!lastNameValidator}
                 />
-              </div>
+              </div> */}
               <div>
                 <Form.Label>Company*</Form.Label>
                 <Form.Control
