@@ -306,4 +306,4 @@ export const LOOPIN_FEATURES = [
 
 export const LOOPIN_REDIRCT_URL = "https://loopinhq.com?meeting-personality";
 
-export const LOOPIN_QUIZ_SHARE_LINK = "https://loopin-meeting-persona-webapp.vercel.app/home";
+export const LOOPIN_QUIZ_SHARE_LINK = "https://persona.loopinhq.com/home";

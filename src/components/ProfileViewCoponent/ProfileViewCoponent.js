@@ -155,7 +155,7 @@ const ProfileViewCoponent = () => {
                 computedPersona +
                 "'! " +
                 PERSONAS_DATA[computedPersona]?.tweetHighlights +
-                ". Take the meeting personality quiz and find out your style too!&hashtags=AI,Meetings&url=https://personality.loopinhq.com&via=LoopinHQ&related=twitterapi,twitter"
+                ". Take the meeting personality quiz and find out your style too!&hashtags=AI,Meetings&url=https://persona.loopinhq.com&via=LoopinHQ&related=twitterapi,twitter"
               }
             >
               <img src={TWITTER_ICON} alt="Twitter" />

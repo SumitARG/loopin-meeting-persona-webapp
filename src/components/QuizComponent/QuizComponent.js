@@ -10,11 +10,10 @@ import RIGHT_IMAGE_3 from "../../assets/lotties/quiz_lottie_right_3.json";
 import RIGHT_IMAGE_4 from "../../assets/lotties/quiz_lottie_right_4.json";
 import RIGHT_IMAGE_5 from "../../assets/lotties/quiz_lottie_right_5.json";
 import RIGHT_IMAGE_6 from "../../assets/lotties/quiz_lottie_right_6.json";
-import {
-  LOCAL_STORAGE,
-  ROUTE_NAMES
-} from "../../config/Constants";
+import LOADER from "../../assets/lotties/loader_lottie.json";
+import { LOCAL_STORAGE, ROUTE_NAMES } from "../../config/Constants";
 import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
+import QuestionStep from "../CommonComponents/QuestionSteps/QuestionStep";
 import QuestionComponent from "./QuestionComponent/QuestionComponent";
 import "./QuizComponent.scss";
 // import FooterComponent from "../FooterComponent/FooterComponent";
@@ -31,6 +30,8 @@ const QuizComponent = ({
   const navigate = useNavigate();
 
   const [disabled, setDisabled] = useState(questionNumber !== 6 ? true : false);
+
+  const [showLoading, setShowLoading] = useState(false);
 
   window.addEventListener("storage", () => {
     if (
@@ -58,7 +59,14 @@ const QuizComponent = ({
           )[0]
           ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
       } else {
-        navigate(`/${ROUTE_NAMES.SUBMIT_FORM_ROUTE}`);
+        setShowLoading(true);
+        document
+          .getElementsByClassName("loader-section")[0]
+          ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+        setTimeout(() => {
+          setShowLoading(false);
+          navigate(`/${ROUTE_NAMES.SUBMIT_FORM_ROUTE}`);
+        }, 5000);
       }
     } else {
       if (!disabled) {
@@ -117,11 +125,14 @@ const QuizComponent = ({
         </div>
         <div className="question-container">
           <QuestionComponent questionTemplate={questionDetails} />
-          {(submitClicked && disabled) && (
+          {submitClicked && disabled && (
             <label className="question-warning">
               *This question is mandatory
             </label>
           )}
+          <div className="question-step">
+            <QuestionStep completedStep={questionNumber}></QuestionStep>
+          </div>
           <div
             className="button-section"
             onClick={(event) => nextButtonClickHandler(event)}
@@ -133,9 +144,16 @@ const QuizComponent = ({
           </div>
         </div>
         <div className="right-image">
-          <Player className="quiz-lottie" src={getRightImage()} loop autoplay/>
+          <Player className="quiz-lottie" src={getRightImage()} loop autoplay />
         </div>
       </div>
+      {questionNumber === 6?(<div className="loader-section">
+        {showLoading ? (
+          <Player className="loader-lottie" src={LOADER} loop autoplay />
+        ) : (
+          ""
+        )}
+      </div>):''}
       {/* {questionNumber === 6 && <FooterComponent />} */}
     </>
   );
