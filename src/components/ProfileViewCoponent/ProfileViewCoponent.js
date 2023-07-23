@@ -3,7 +3,6 @@ import html2canvas from "html2canvas";
 import React, { useEffect, useState } from "react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import ShareLink from "react-linkedin-share-link";
-import LINKEDIN_ICON from "../../assets/images/svg/Linkedin.svg";
 import PERSONA_1 from "../../assets/images/The Captivating Creator.png";
 import PERSONA_5 from "../../assets/images/The Celebration Connoisseur.png";
 import PERSONA_8 from "../../assets/images/The Chill Zen Master.png";
@@ -14,6 +13,7 @@ import PERSONA_4 from "../../assets/images/The Outcome Orchestrator.png";
 import PERSONA_9 from "../../assets/images/The Spontaneous Frame Jumper.png";
 import PERSONA_6 from "../../assets/images/The Super Productive Prodigy.png";
 import PERSONA_10 from "../../assets/images/The Unconventional Visionary.png";
+import LINKEDIN_ICON from "../../assets/images/svg/Linkedin.svg";
 import SHARE_ICON from "../../assets/images/svg/share_icon.svg";
 import TWITTER_ICON from "../../assets/images/svg/twitter.svg";
 import {
@@ -22,8 +22,7 @@ import {
   PERSONAS_DATA,
 } from "../../config/Constants";
 import { firestore } from "../../firebase_setup/firebase";
-import Insights from "../CommonComponents/Insights/Insights";
-import LoopinRecommendations from "../CommonComponents/LoopinRecommendations/LoopinRecommendations";
+import LoopinInsights from "../CommonComponents/LoopinInsights/LoopinInsights";
 import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
 import "./ProfileViewCoponent.scss";
 
@@ -50,27 +49,33 @@ const ProfileViewCoponent = () => {
     const q = query(usersRef);
     const qSnapshot = await getDocs(q);
     const tempRecords = [];
-    qSnapshot.forEach((doc) => {
-      let data = doc.data();
-      if (
-        data.email !== "" &&
-        data.email
-          .split("@")[1]
-          .includes(
-            localStorage.getItem(LOCAL_STORAGE.USER_EMAIL).split("@")[1]
-          )
-      ) {
-        tempRecords.push(data);
-      }
-    });
     let tempLederboard = {};
-    tempRecords.forEach((item) => {
-      if (tempLederboard[item.persona]) {
-        tempLederboard[item.persona] = tempLederboard[item.persona] + 1;
-      } else {
-        tempLederboard[item.persona] = 1;
-      }
-    });
+    let localEmailEnd = localStorage.getItem(LOCAL_STORAGE.USER_EMAIL).split("@")[1];
+    if(localEmailEnd.includes("gmail") || localEmailEnd.includes("yahoo") || localEmailEnd.includes("hotmail")){
+      tempLederboard[computedPersona] = 1;
+    }
+    else{
+      qSnapshot.forEach((doc) => {
+        let data = doc.data();
+        if (
+          data.email !== "" &&
+          data.email
+            .split("@")[1]
+            .includes(
+              localEmailEnd
+            )
+        ) {
+          tempRecords.push(data);
+        }
+      });
+      tempRecords.forEach((item) => {
+        if (tempLederboard[item.persona]) {
+          tempLederboard[item.persona] = tempLederboard[item.persona] + 1;
+        } else {
+          tempLederboard[item.persona] = 1;
+        }
+      });
+    }
     setLeaderboard(tempLederboard);
   };
 
@@ -204,16 +209,8 @@ const ProfileViewCoponent = () => {
           ))}
         </div>
       </div>
-      <div className="strength-insights">
-        <Insights content={personaDetails.strengths} insightType="strengths" />
-      </div>
-      <div className="weakness-insights">
-        <Insights content={personaDetails.weaknesses} insightType="weakness" />
-      </div>
-      <div className="loopin-container">
-        <LoopinRecommendations
-          recommendations={personaDetails.recommendations}
-        />
+      <div className="loopin-insights">
+            <LoopinInsights strengths={personaDetails.strengths} recommendations={personaDetails.recommendations}/>
       </div>
       <div className="leaderboard">
         <div className="leaderboard-header">Your Company leaderboard</div>

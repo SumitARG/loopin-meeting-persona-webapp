@@ -41,9 +41,18 @@ export const PERSONAS_DATA = {
       'In summary, as "The Captivating Creator," you harness the power of visuals and creativity to make meetings more engaging and memorable. Your ability to capture and present meeting highlights in a captivating way leaves a lasting impression on participants, fostering a collaborative environment that embraces both productivity and creativity. 🎨✨🚀💼',
     ],
     strengths: [
-      "Master of creativity, capturing meeting highlights through hilarious comics and memes",
-      "Leaves a lasting impression and keeps everyone engaged with entertaining summaries",
-      "Brings a fun and memorable atmosphere to meetings",
+      {
+        content:"Master of creativity, capturing meeting highlights through hilarious comics and memes",
+        image:"🎨"
+      },
+      {
+        content:"Leaves a lasting impression and keeps everyone engaged with entertaining summaries",
+        image:"🗒️"
+      },
+      {
+        content:"Brings a fun and memorable atmosphere to meetings",
+        image:"🎭"
+      }
     ],
     weaknesses: [
       "May get carried away with humor, sometimes diverting attention from the main agenda",
@@ -63,9 +72,18 @@ export const PERSONAS_DATA = {
       'In summary, as "The Dynamic Agenda Artist," you bring creativity and organization to the forefront of meetings, making them visually appealing, exciting, and well-structured. Your collaborative spirit with "The Captivating Creator" and "The Chill Zen Master" creates a meeting environment that seamlessly integrates creativity and mindfulness. 🎨📝🌟',
     ],
     strengths: [
-      "Crafts visually stunning and captivating meeting agendas",
-      "Injects excitement and creativity into every aspect of meeting preparation",
-      "Turns mundane agendas into exciting experiences",
+      {
+        content:"Crafts visually stunning and captivating meeting agendas",
+        image:"📝"
+      },
+      {
+        content:"Injects excitement and creativity into every aspect of meeting preparation",
+        image:"✨"
+      },
+      {
+        content:"Turns mundane agendas into exciting experiences",
+        image:"🎉"
+      }
     ],
     weaknesses: [
       "May spend excessive time on design and aesthetics, potentially impacting meeting efficiency",
@@ -84,9 +102,18 @@ export const PERSONAS_DATA = {
       'In summary, as "The Conflict Whisperer," you play a vital role in fostering healthy discussions and creating an atmosphere of trust and understanding. Your talent for conflict resolution, combined with your collaborative spirit, allows meetings to become spaces where diverse perspectives are valued and conflicts are transformed into opportunities for growth and consensus. 🗣️🤝✨',
     ],
     strengths: [
-      "Possesses a supernatural ability to resolve conflicts with grace and finesse",
-      "Master of facilitating open discussions and finding common ground",
-      "Turns tension into amusement, creating a harmonious meeting atmosphere",
+      {
+        content:"Possesses a supernatural ability to resolve conflicts with grace and finesse",
+        image:"💫"
+      },
+      {
+        content:"Master of facilitating open discussions and finding common ground",
+        image:"🗣️"
+      },
+      {
+        content:"Turns tension into amusement, creating a harmonious meeting atmosphere",
+        image:"😄"
+      }
     ],
     weaknesses: [
       "May prioritize conflict resolution over meeting objectives, affecting time management",
@@ -106,9 +133,18 @@ export const PERSONAS_DATA = {
       'In summary, as "The Outcome Orchestrator," you bring structure and accountability to meetings by diligently tracking action items and deadlines. Your collaborative efforts with "The Dynamic Agenda Artist" and "The Super Productive Prodigy" create a powerful combination that drives the team towards achieving measurable results. 📋🚀💼',
     ],
     strengths: [
-      "Orchestrates follow-up on meeting outcomes with meticulous action item lists",
-      "Aims for supercharged progress and result-oriented discussions",
-      "Keeps the team on track like a virtuoso conductor",
+      {
+        content:"Orchestrates follow-up on meeting outcomes with meticulous action item lists",
+        image:"📈"
+      },
+      {
+        content:"Aims for supercharged progress and result-oriented discussions",
+        image:"⚡"
+      },
+      {
+        content:"Keeps the team on track like a virtuoso conductor",
+        image:"🎯"
+      }
     ],
     weaknesses: [
       "May become overly focused on action items, potentially neglecting broader discussions",
@@ -128,9 +164,18 @@ export const PERSONAS_DATA = {
       'In summary, as "The Celebration Connoisseur," you infuse meetings with a sense of joy and accomplishment. Your dedication to acknowledging achievements and milestones creates a positive and motivating environment where team members feel valued and inspired.🎉🌟🎈',
     ],
     strengths: [
-      "Master of ceremonies, celebrating achievements and milestones with infectious enthusiasm",
-      "Infuses meetings with a vibrant and jubilant atmosphere",
-      "Boosts team morale and creates an unforgettable sense of accomplishment",
+      {
+        content:"Master of ceremonies, celebrating achievements and milestones with infectious enthusiasm",
+        image:"🎉"
+      },
+      {
+        content:"Infuses meetings with a vibrant and jubilant atmosphere",
+        image:"🎊"
+      },
+      {
+        content:"Boosts team morale and creates an unforgettable sense of accomplishment",
+        image:"👏"
+      }
     ],
     weaknesses: [
       "May prioritize celebrations over addressing challenges or conflicts",
@@ -151,9 +196,18 @@ export const PERSONAS_DATA = {
       'With your unwavering determination to optimize meeting time and resources, you play a vital role in keeping the team focused, motivated, and on track to achieve their goals. As "The Super Productive Prodigy," you are a force to be reckoned with, revolutionizing the way meetings are conducted and inspiring others to embrace the power of productivity. 💼💪🌟🔥',
     ],
     strengths: [
-      "Embodies the spirit of hyper-efficiency, squeezing maximum productivity out of every meeting",
-      "Sets laser-focused goals and keeps discussions on track",
-      "Performs like a productivity superhero",
+      {
+        content:"Embodies the spirit of hyper-efficiency, squeezing maximum productivity out of every meeting",
+        image:"⚡"
+      },
+      {
+        content:"Sets laser-focused goals and keeps discussions on track",
+        image:"🎯"
+      },
+      {
+        content:"Performs like a productivity superhero",
+        image:"🚀"
+      }
     ],
     weaknesses: [
       "May undervalue the need for creativity and open discussion, potentially stifling innovation",
@@ -173,9 +227,18 @@ export const PERSONAS_DATA = {
       'In summary, as "The Creative Maverick," your ability to think outside the box and generate innovative ideas adds a dynamic element to meetings. Your collaboration with "The Celebration Connoisseur" and "The Dynamic Agenda Artist" creates a harmonious blend of creativity and structure, making meetings both exciting and purposeful. 🎨🚀🌟',
     ],
     strengths: [
-      "Maverick of creativity, always breaking the mold and bringing fresh ideas to meetings",
-      "Ignites sparks of innovation and inspiration among team members",
-      "Transforms meetings into a playground of creative thinking",
+      {
+        content:"Maverick of creativity, always breaking the mold and bringing fresh ideas to meetings",
+        image:"💡"
+      },
+      {
+        content:"Ignites sparks of innovation and inspiration among team members",
+        image:"🌈"
+      },
+      {
+        content:"Transforms meetings into a playground of creative thinking",
+        image:"🎨"
+      }
     ],
     weaknesses: [
       "May get lost in the realm of imagination, sometimes neglecting practical considerations",
@@ -195,9 +258,18 @@ export const PERSONAS_DATA = {
       'In summary, as "The Chill Zen Master," you bring a sense of tranquility and balance to meetings. Your collaboration with "The Conflict Whisperer" and "The Dynamic Agenda Artist" creates an environment where open communication, structure, and mindfulness coexist, leading to productive and harmonious discussions. 🧘🗣️✨',
     ],
     strengths: [
-      "Zen master of serenity, creating a relaxed and stress-free meeting environment",
-      "Encourages open communication, active listening, and mindfulness",
-      "Infuses meetings with a tranquil and harmonious aura",
+      {
+        content:"Zen master of serenity, creating a relaxed and stress-free meeting environment",
+        image:"🧘‍♂️"
+      },
+      {
+        content:"Encourages open communication, active listening, and mindfulness",
+        image:"🌿"
+      },
+      {
+        content:"Infuses meetings with a tranquil and harmonious aura",
+        image:"🕊️"
+      }
     ],
     weaknesses: [
       "May prioritize harmony over addressing conflicts or critical discussions",
@@ -216,9 +288,18 @@ export const PERSONAS_DATA = {
       'In summary, as "The Spontaneous Frame Jumper," you inject a sense of playfulness and novelty into meetings. Your collaboration with "The Dynamic Agenda Artist," "The Celebration Connoisseur," and "The Creative Maverick" creates a dynamic and unpredictable meeting experience that keeps participants inspired and entertained. 🖼️🎉🎨',
     ],
     strengths: [
-      "The wild card of meetings, injecting playfulness by jumping between different background frames",
-      "Adds a touch of whimsy and surprise to the meeting atmosphere",
-      "Ensures meetings are as entertaining",
+      {
+        content:"The wild card of meetings, injecting playfulness by jumping between different background frames",
+        image:"🎭"
+      },
+      {
+        content:" Adds a touch of whimsy and surprise to the meeting atmosphere",
+        image:"😄"
+      },
+      {
+        content:"Ensures meetings are as entertaining as they are productive",
+        image:"🎉"
+      }
     ],
     weaknesses: [],
     recommendations: [
@@ -235,9 +316,18 @@ export const PERSONAS_DATA = {
       'In summary, as "The Unconventional Visionary," you bring a unique perspective and a spirit of innovation to meetings. Your collaboration with other personalities opens up new horizons, fostering creativity, and driving transformative discussions. 🌌🚀🧠'
     ],
     strengths: [
-      "Embraces a different approach and thinks outside the box",
-      "Generates innovative and groundbreaking ideas during meetings",
-      "Challenges the status quo and inspires others with their visionary thinking",
+      {
+        content:"Embraces a different approach and challenges conventional thinking",
+        image:"🌌"
+      },
+      {
+        content:"Excels at thinking outside the box and exploring innovative ideas",
+        image:"🚀"
+      },
+      {
+        content:"Ignites creativity and inspires others to push boundaries and explore new possibilities",
+        image:"🧠"
+      }
     ],
     weaknesses: [
       "May struggle to communicate ideas effectively, leading to confusion among team members",
