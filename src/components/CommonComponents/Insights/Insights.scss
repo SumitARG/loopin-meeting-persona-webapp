@@ -1,0 +1,63 @@
+.insights {
+    display: flex;
+    padding: 64px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--gray-50, #F9FAFB);
+    flex-direction: row;
+
+    .insights-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        flex: 1 0 0;
+
+        .insights-content-head {
+            font-size: 16px;
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            background: -webkit-linear-gradient(#A83BF5, #4AC7FA);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+        }
+
+        .insights-content-body {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            color: var(--gray-600, #475467);
+            font-size: 16px;
+            font-family: 'Manrope';
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            gap: 20px;
+        }
+    }
+
+    .insights-image {
+        color: var(--gray-600, #475467);
+        font-size: 140px;
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        img{
+            width: 150px;
+        }
+    }
+}
+
+.alignment-direction-weakness{
+    flex-direction: row-reverse;
+}

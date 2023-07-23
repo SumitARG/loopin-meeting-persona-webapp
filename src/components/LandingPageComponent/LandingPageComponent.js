@@ -4,16 +4,27 @@ import HOME_IMAGE_RIGHT from "../../assets/images/Character Set 1 - 12.png";
 import HOME_IMAGE_BOTTOM from "../../assets/images/Character Set 1 - 16.png";
 import PrimaryButton from "../CommonComponents/PrimaryButton/PrimaryButton";
 import SecondaryHyperlink from "../CommonComponents/SecondaryHyperlink/SecondaryHyperlink";
+import { useNavigate } from "react-router";
+import { ROUTE_NAMES } from "../../config/Constants";
 
-const LandingPageComponent = () => {
+const LandingPageComponent = ({showPersona}) => {
+  const navigate = useNavigate();
+
   const buttonClickHandler = () => {
-    document
-      .getElementsByClassName("quiz-screen question-1")[0]
-      .scrollIntoView({ block: "nearest", behavior: "smooth" });
+    navigate(`${ROUTE_NAMES.QUIZ_ROUTE}`);
+    setTimeout(() => {
+      document
+        .getElementsByClassName("quiz-screen question-1")[0]
+        .scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }, 100);
   };
 
+  const secondaryButtonClick = () => {
+    showPersona();
+  }
+
   return (
-    <div className="container landing-page-container">
+    <div className="landing-page-container">
       <div className="home-page-header">What is your meeting persona? 🚀</div>
       <div className="landing-page-content">
         <p>
@@ -45,7 +56,7 @@ const LandingPageComponent = () => {
               buttonLabel="Start Quiz"
               onButtonClick={buttonClickHandler}
             />
-            <SecondaryHyperlink linkLabel="View All Personas" />
+            <SecondaryHyperlink linkLabel="View All Personas" onButtonClick={secondaryButtonClick}/>
             <div className="bottom-image">
               <img src={HOME_IMAGE_BOTTOM} alt="bottom" />
             </div>

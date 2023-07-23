@@ -1,42 +1,28 @@
-import './App.scss';
-import HeaderComponent from './components/HeaderComponent/HeaderComponent';
-import LandingPageComponent from './components/LandingPageComponent/LandingPageComponent';
-import QuizComponent from './components/QuizComponent/QuizComponent';
+import { useEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import "./App.scss";
+import FooterComponent from "./components/FooterComponent/FooterComponent";
+import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
+// import QuizContainer from "./components/QuizContainer/QuizContainer";
+import { LOCAL_STORAGE, ROUTE_NAMES } from "./config/Constants";
 
 function App() {
+  const navigate = useNavigate();
+  // const location = useLocation();
 
-  let question1 = {
-    question:
-      "Question 1: How do you prefer to take notes and share meeting summaries?",
-    options: [
-      {
-        optionContent:
-          "a) I record the meeting and share the audio/video for reference.",
-        optionId: 1,
-      },
-      {
-        optionContent:
-          "b) I take notes during the meeting and share a detailed summary afterward.",
-        optionId: 2,
-      },
-      {
-        optionContent:
-          "c) I create fun and engaging comics or memes to capture the meeting highlights.",
-        optionId: 3,
-      },
-    ],
-  }
+  useEffect(() => {
+    localStorage.setItem(
+      LOCAL_STORAGE.ANSWERS_STORAGE,
+      JSON.stringify({ 1: "", 2: "", 3: "", 4: "", 5: "", 6: "" })
+    );
+      navigate(`/${ROUTE_NAMES.HOME_ROUTE}`);
+  }, []);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="App">
-      <HeaderComponent/>
-      <LandingPageComponent/>
-      <QuizComponent questionNumber={1} questionDetails={question1}/>
-      <QuizComponent questionNumber={2} questionDetails={question1}/>
-      <QuizComponent questionNumber={3} questionDetails={question1}/>
-      <QuizComponent questionNumber={4} questionDetails={question1}/>
-      <QuizComponent questionNumber={5} questionDetails={question1}/>
-      <QuizComponent questionNumber={6} questionDetails={question1}/>
+    <div className="App" id="mainApp">
+      <HeaderComponent />
+      <Outlet />
+      <FooterComponent />
     </div>
   );
 }

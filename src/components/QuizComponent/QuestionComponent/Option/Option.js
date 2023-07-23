@@ -1,5 +1,5 @@
 import "./Option.scss";
-import SELECTED_ICON from "../../../../assets/images/option_selected.svg";
+import SELECTED_ICON from "../../../../assets/images/svg/option_selected.svg";
 
 const Option = ({ content, id, isSelected, setSelected }) => {
   const optionSelectHandler = () => {
@@ -7,15 +7,20 @@ const Option = ({ content, id, isSelected, setSelected }) => {
   };
 
   return (
-    <div className="option" onClick={optionSelectHandler}>
-      {content}
-      {
-        <img
-          src={SELECTED_ICON}
-          alt="selected"
-          style={{ display: !isSelected ? "none" : "block" }}
-        />
-      }
+    <div
+      className={`option ${isSelected ? "active" : ""}`}
+      onClick={optionSelectHandler}
+    >
+      <div className="option-content">{content}</div>
+      <div className="selection-indicator">
+        {
+          <img
+            src={SELECTED_ICON}
+            alt="selected"
+            style={{ display: !isSelected ? "none" : "block" }}
+          />
+        }
+      </div>
     </div>
   );
 };
