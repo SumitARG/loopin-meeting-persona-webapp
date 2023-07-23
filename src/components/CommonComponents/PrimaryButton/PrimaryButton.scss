@@ -1,18 +1,4 @@
-.primary-button {
-    display: flex;
-    padding: 16px 32px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    border-radius: 20px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%), #7660FF;
-    box-shadow: 0px 0px 0px 0px rgba(66, 60, 114, 0.07), 0px 2px 4px 0px rgba(66, 60, 114, 0.07), 0px 8px 8px 0px rgba(66, 60, 114, 0.06), 0px 18px 11px 0px rgba(66, 60, 114, 0.04), 0px 33px 13px 0px rgba(66, 60, 114, 0.01), 0px 51px 14px 0px rgba(66, 60, 114, 0.00);
-    cursor: pointer;
-}
 
-.primary-button:hover{
-    background: #7660FF;
-}
 
 .button-label {
     color: #FFF;
@@ -29,6 +15,38 @@
     cursor: default;
 }
 
-.disabled:hover {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%), #7660FF;
+.primary-button .disabled:hover {
+    .front{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%), #7660FF;
+    }
 }
+
+.primary-button {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%), #fa60ff82;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 20px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    display: flex;
+    box-shadow: 0px 0px 0px 0px rgba(66, 60, 114, 0.07), 0px 2px 4px 0px rgba(66, 60, 114, 0.07), 0px 8px 8px 0px rgba(66, 60, 114, 0.06), 0px 18px 11px 0px rgba(66, 60, 114, 0.04), 0px 33px 13px 0px rgba(66, 60, 114, 0.01), 0px 51px 14px 0px rgba(66, 60, 114, 0.00);
+  }
+  .front {
+    display: block;
+    padding: 16px 32px;
+    border-radius: 20px;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 100%), #7660FF;
+    transform: translate(4px, -6px);
+  }
+
+  .front:hover{
+    background: #7660FF;
+  }
+
+  .primary-button:active .front {
+    transform: translate(0px, -2px);
+  }

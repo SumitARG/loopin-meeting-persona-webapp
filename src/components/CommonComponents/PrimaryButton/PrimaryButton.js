@@ -13,7 +13,7 @@ const PrimaryButton = ({
       style={{ width: `${buttonWidth}px` }}
       onClick={!disabled?onButtonClick:() => {}}
     >
-      <div className="button-label">{buttonLabel}</div>
+      <div className="front button-label">{buttonLabel}</div>
     </div>
   );
 };
