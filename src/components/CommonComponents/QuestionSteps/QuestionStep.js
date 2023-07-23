@@ -7,8 +7,8 @@ const QuestionStep = ({ completedStep }) => {
   const steps = [1, 2, 3, 4, 5, 6];
   return (
     <div className="steps">
-      {steps.map((item) => (
-        <div className={`step ${item <= completedStep ? "active-step" : ""}`}>
+      {steps.map((item, i) => (
+        <div key={i} className={`step ${item <= completedStep ? "active-step" : ""}`}>
           {item === completedStep ? (
             <Player className="step-lottie" src={STEP_RUNNER_LOTTIE} loop autoplay />
           ) : (

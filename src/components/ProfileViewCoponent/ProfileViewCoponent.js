@@ -39,6 +39,8 @@ const ProfileViewCoponent = () => {
 
   const [copyMessageFlag, setCopyMessageFlag] = useState(false);
 
+  const [accordianOpenId, setAccordianOpenId] = useState(-1);
+
   const getTooltip = (tooltipText) => (
     <Tooltip id="tooltip">
       <strong>{tooltipText}</strong>
@@ -49,34 +51,43 @@ const ProfileViewCoponent = () => {
     const q = query(usersRef);
     const qSnapshot = await getDocs(q);
     const tempRecords = [];
-    let tempLederboard = {};
-    let localEmailEnd = localStorage.getItem(LOCAL_STORAGE.USER_EMAIL).split("@")[1];
-    if(localEmailEnd.includes("gmail") || localEmailEnd.includes("yahoo") || localEmailEnd.includes("hotmail")){
-      tempLederboard[computedPersona] = 1;
-    }
-    else{
+    let tempLeaderboard = {};
+    let localEmailEnd = localStorage
+      .getItem(LOCAL_STORAGE.USER_EMAIL)
+      .split("@")[1];
+    if (
+      localEmailEnd.includes("gmail") ||
+      localEmailEnd.includes("yahoo") ||
+      localEmailEnd.includes("hotmail")
+    ) {
+      tempLeaderboard[computedPersona] = {
+        count: 1,
+        records: [],
+      };
+    } else {
       qSnapshot.forEach((doc) => {
         let data = doc.data();
         if (
           data.email !== "" &&
-          data.email
-            .split("@")[1]
-            .includes(
-              localEmailEnd
-            )
+          data.email.split("@")[1].includes(localEmailEnd)
         ) {
           tempRecords.push(data);
         }
       });
       tempRecords.forEach((item) => {
-        if (tempLederboard[item.persona]) {
-          tempLederboard[item.persona] = tempLederboard[item.persona] + 1;
+        if (tempLeaderboard[item.persona]) {
+          tempLeaderboard[item.persona].count = tempLeaderboard[item.persona].count + 1;
+          tempLeaderboard[item.persona].records.push(item);
         } else {
-          tempLederboard[item.persona] = 1;
+          tempLeaderboard[item.persona] = {
+            count: 1,
+            records: [item],
+          };
         }
       });
     }
-    setLeaderboard(tempLederboard);
+    console.log(tempLeaderboard)
+    setLeaderboard(tempLeaderboard);
   };
 
   useEffect(() => {
@@ -130,6 +141,15 @@ const ProfileViewCoponent = () => {
         return "";
     }
   };
+
+  const toggleDisplayList = (id) => {
+    if(accordianOpenId === id){
+      setAccordianOpenId(-1);
+    }
+    else{
+      setAccordianOpenId(id)
+    }
+  }
 
   return (
     <div className="profile-view-component" id="profile">
@@ -210,20 +230,23 @@ const ProfileViewCoponent = () => {
         </div>
       </div>
       <div className="loopin-insights">
-            <LoopinInsights strengths={personaDetails.strengths} recommendations={personaDetails.recommendations}/>
+        <LoopinInsights
+          strengths={personaDetails.strengths}
+          recommendations={personaDetails.recommendations}
+        />
       </div>
       <div className="leaderboard">
         <div className="leaderboard-header">Your Company leaderboard</div>
         <div className="leaderboard-separator">
           <hr className="seprator-line" />
         </div>
-        {Object.keys(PERSONAS_DATA).map((item, i) => (
-          <React.Fragment key={i}>
+        {Object.keys(PERSONAS_DATA).map((item, index) => (
+          <React.Fragment key={PERSONAS_DATA[item].id}>
             <div className="leaderboard-content">
               <div
                 className="img-div"
                 style={{
-                  backgroundColor: `${i % 2 === 0 ? "#d9edff" : "#fff3d9"}`,
+                  backgroundColor: `${index % 2 === 0 ? "#d9edff" : "#fff3d9"}`,
                 }}
               >
                 <img
@@ -234,9 +257,24 @@ const ProfileViewCoponent = () => {
               </div>
               <div className="persona-name">"{item}"</div>
               <div className="count">
-                x{leaderboard[item] > 0 ? leaderboard[item] : 0}
+                x{leaderboard[item]?.count > 0 ? leaderboard[item]?.count : 0}
+                {leaderboard[item]?.records?.length > 0 ? <label className="view-list" onClick={() => toggleDisplayList(PERSONAS_DATA[item].id)}>View List</label>:''}
               </div>
             </div>
+            {<div className={`display-list ${accordianOpenId === PERSONAS_DATA[item].id?'show-list':''}`}>
+              {leaderboard[item]?.records?.map((item, i) => (
+                <React.Fragment key={i}>
+                  <div className="persona-user">
+                    <div className="user-initial">{item.email.charAt(0)}</div>
+                    <div className="user-name">{item.firstName}</div>
+                    <div className="user-email">{item.email}</div>
+                  </div>
+                  <div className="leaderboard-persona-separator">
+                    <hr className="seprator-line" />
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>}
             <div className="leaderboard-persona-separator">
               <hr className="seprator-line" />
             </div>

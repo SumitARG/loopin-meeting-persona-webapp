@@ -1,7 +1,7 @@
 export const LOCAL_STORAGE = {
   ANSWERS_STORAGE: "answersStorage",
   COMPUTED_PERSONA: "coputedPersona",
-  USER_EMAIL:"userEmail"
+  USER_EMAIL: "userEmail",
 };
 
 export const ROUTE_NAMES = {
@@ -42,26 +42,27 @@ export const PERSONAS_DATA = {
     ],
     strengths: [
       {
-        content:"Master of creativity, capturing meeting highlights through hilarious comics and memes",
-        image:"🎨"
+        content:
+          "Master of creativity, capturing meeting highlights through hilarious comics and memes",
+        image: "🎨",
       },
       {
-        content:"Leaves a lasting impression and keeps everyone engaged with entertaining summaries",
-        image:"🗒️"
+        content:
+          "Leaves a lasting impression and keeps everyone engaged with entertaining summaries",
+        image: "🗒️",
       },
       {
-        content:"Brings a fun and memorable atmosphere to meetings",
-        image:"🎭"
-      }
+        content: "Brings a fun and memorable atmosphere to meetings",
+        image: "🎭",
+      },
     ],
     weaknesses: [
       "May get carried away with humor, sometimes diverting attention from the main agenda",
       "Can be overly focused on entertainment, potentially neglecting important details",
     ],
-    recommendations: [
-      1, 2, 8
-    ],
-    tweetHighlights: "My meeting highlights will leave a lasting impression"
+    recommendations: [1, 2, 8],
+    tweetHighlights: "My meeting highlights will leave a lasting impression",
+    id: 1,
   },
   "The Dynamic Agenda Artist": {
     tagLine: "Igniting excitement with visually captivating meeting agendas.",
@@ -73,26 +74,26 @@ export const PERSONAS_DATA = {
     ],
     strengths: [
       {
-        content:"Crafts visually stunning and captivating meeting agendas",
-        image:"📝"
+        content: "Crafts visually stunning and captivating meeting agendas",
+        image: "📝",
       },
       {
-        content:"Injects excitement and creativity into every aspect of meeting preparation",
-        image:"✨"
+        content:
+          "Injects excitement and creativity into every aspect of meeting preparation",
+        image: "✨",
       },
       {
-        content:"Turns mundane agendas into exciting experiences",
-        image:"🎉"
-      }
+        content: "Turns mundane agendas into exciting experiences",
+        image: "🎉",
+      },
     ],
     weaknesses: [
       "May spend excessive time on design and aesthetics, potentially impacting meeting efficiency",
       "Can get caught up in the visual appeal and overlook practicality at times",
     ],
-    recommendations: [
-      8, 5, 4
-    ],
-    tweetHighlights: "My visually appealing agendas make meetings engaging"
+    recommendations: [8, 5, 4],
+    tweetHighlights: "My visually appealing agendas make meetings engaging",
+    id: 2,
   },
   "The Conflict Whisperer": {
     tagLine: "Harmonizing discussions and resolving conflicts with finesse.",
@@ -103,26 +104,29 @@ export const PERSONAS_DATA = {
     ],
     strengths: [
       {
-        content:"Possesses a supernatural ability to resolve conflicts with grace and finesse",
-        image:"💫"
+        content:
+          "Possesses a supernatural ability to resolve conflicts with grace and finesse",
+        image: "💫",
       },
       {
-        content:"Master of facilitating open discussions and finding common ground",
-        image:"🗣️"
+        content:
+          "Master of facilitating open discussions and finding common ground",
+        image: "🗣️",
       },
       {
-        content:"Turns tension into amusement, creating a harmonious meeting atmosphere",
-        image:"😄"
-      }
+        content:
+          "Turns tension into amusement, creating a harmonious meeting atmosphere",
+        image: "😄",
+      },
     ],
     weaknesses: [
       "May prioritize conflict resolution over meeting objectives, affecting time management",
       "Can struggle with more assertive decision-making in high-pressure situations",
     ],
-    recommendations: [
-      8, 7, 1
-    ],
-    tweetHighlights: "I excel at resolving conflicts and creating harmonious meeting atmospheres"
+    recommendations: [8, 7, 1],
+    tweetHighlights:
+      "I excel at resolving conflicts and creating harmonious meeting atmospheres",
+    id: 3,
   },
   "The Outcome Orchestrator": {
     tagLine: "Driving progress and results through meticulous follow-up.",
@@ -134,26 +138,27 @@ export const PERSONAS_DATA = {
     ],
     strengths: [
       {
-        content:"Orchestrates follow-up on meeting outcomes with meticulous action item lists",
-        image:"📈"
+        content:
+          "Orchestrates follow-up on meeting outcomes with meticulous action item lists",
+        image: "📈",
       },
       {
-        content:"Aims for supercharged progress and result-oriented discussions",
-        image:"⚡"
+        content:
+          "Aims for supercharged progress and result-oriented discussions",
+        image: "⚡",
       },
       {
-        content:"Keeps the team on track like a virtuoso conductor",
-        image:"🎯"
-      }
+        content: "Keeps the team on track like a virtuoso conductor",
+        image: "🎯",
+      },
     ],
     weaknesses: [
       "May become overly focused on action items, potentially neglecting broader discussions",
       "Can be so goal-oriented that they forget to celebrate and enjoy the process",
     ],
-    recommendations: [
-      5, 8, 4
-    ],
-    tweetHighlights: "My focus on results keeps meetings on track"
+    recommendations: [5, 8, 4],
+    tweetHighlights: "My focus on results keeps meetings on track",
+    id: 4,
   },
   "The Celebration Connoisseur": {
     tagLine:
@@ -165,26 +170,27 @@ export const PERSONAS_DATA = {
     ],
     strengths: [
       {
-        content:"Master of ceremonies, celebrating achievements and milestones with infectious enthusiasm",
-        image:"🎉"
+        content:
+          "Master of ceremonies, celebrating achievements and milestones with infectious enthusiasm",
+        image: "🎉",
       },
       {
-        content:"Infuses meetings with a vibrant and jubilant atmosphere",
-        image:"🎊"
+        content: "Infuses meetings with a vibrant and jubilant atmosphere",
+        image: "🎊",
       },
       {
-        content:"Boosts team morale and creates an unforgettable sense of accomplishment",
-        image:"👏"
-      }
+        content:
+          "Boosts team morale and creates an unforgettable sense of accomplishment",
+        image: "👏",
+      },
     ],
     weaknesses: [
       "May prioritize celebrations over addressing challenges or conflicts",
       "Can sometimes go overboard with festivities, causing distractions from the meeting's purpose",
     ],
-    recommendations: [
-      1, 5, 8
-    ],
-    tweetHighlights: "I love acknowledging achievements in meetings"
+    recommendations: [1, 5, 8],
+    tweetHighlights: "I love acknowledging achievements in meetings",
+    id: 5,
   },
   "The Super Productive Prodigy": {
     tagLine: "Maximizing efficiency and goal-oriented productivity.",
@@ -197,26 +203,27 @@ export const PERSONAS_DATA = {
     ],
     strengths: [
       {
-        content:"Embodies the spirit of hyper-efficiency, squeezing maximum productivity out of every meeting",
-        image:"⚡"
+        content:
+          "Embodies the spirit of hyper-efficiency, squeezing maximum productivity out of every meeting",
+        image: "⚡",
       },
       {
-        content:"Sets laser-focused goals and keeps discussions on track",
-        image:"🎯"
+        content: "Sets laser-focused goals and keeps discussions on track",
+        image: "🎯",
       },
       {
-        content:"Performs like a productivity superhero",
-        image:"🚀"
-      }
+        content: "Performs like a productivity superhero",
+        image: "🚀",
+      },
     ],
     weaknesses: [
       "May undervalue the need for creativity and open discussion, potentially stifling innovation",
       "Can be so focused on tasks that they forget to relax and enjoy the collaborative process",
     ],
-    recommendations: [
-      8, 7, 4
-    ],
-    tweetHighlights:"My efficiency-driven approach enhances meeting productivity"
+    recommendations: [8, 7, 4],
+    tweetHighlights:
+      "My efficiency-driven approach enhances meeting productivity",
+    id: 6,
   },
   "The Creative Maverick": {
     tagLine: "Unleashing innovation and fresh ideas in meetings.",
@@ -228,26 +235,27 @@ export const PERSONAS_DATA = {
     ],
     strengths: [
       {
-        content:"Maverick of creativity, always breaking the mold and bringing fresh ideas to meetings",
-        image:"💡"
+        content:
+          "Maverick of creativity, always breaking the mold and bringing fresh ideas to meetings",
+        image: "💡",
       },
       {
-        content:"Ignites sparks of innovation and inspiration among team members",
-        image:"🌈"
+        content:
+          "Ignites sparks of innovation and inspiration among team members",
+        image: "🌈",
       },
       {
-        content:"Transforms meetings into a playground of creative thinking",
-        image:"🎨"
-      }
+        content: "Transforms meetings into a playground of creative thinking",
+        image: "🎨",
+      },
     ],
     weaknesses: [
       "May get lost in the realm of imagination, sometimes neglecting practical considerations",
       "Can become too attached to novelty, risking overlooking tried and tested solutions",
     ],
-    recommendations: [
-      8, 2, 4
-    ],
-    tweetHighlights:"I bring fresh ideas and ignite creativity in meetings"
+    recommendations: [8, 2, 4],
+    tweetHighlights: "I bring fresh ideas and ignite creativity in meetings",
+    id: 7,
   },
   "The Chill Zen Master": {
     tagLine: "Creating a relaxed and open meeting atmosphere.",
@@ -259,26 +267,28 @@ export const PERSONAS_DATA = {
     ],
     strengths: [
       {
-        content:"Zen master of serenity, creating a relaxed and stress-free meeting environment",
-        image:"🧘‍♂️"
+        content:
+          "Zen master of serenity, creating a relaxed and stress-free meeting environment",
+        image: "🧘‍♂️",
       },
       {
-        content:"Encourages open communication, active listening, and mindfulness",
-        image:"🌿"
+        content:
+          "Encourages open communication, active listening, and mindfulness",
+        image: "🌿",
       },
       {
-        content:"Infuses meetings with a tranquil and harmonious aura",
-        image:"🕊️"
-      }
+        content: "Infuses meetings with a tranquil and harmonious aura",
+        image: "🕊️",
+      },
     ],
     weaknesses: [
       "May prioritize harmony over addressing conflicts or critical discussions",
       "Can sometimes become too laid-back, potentially slowing down decision-making processes",
     ],
-    recommendations: [
-      1, 3, 8
-    ],
-    tweetHighlights:"I create a relaxed meeting environment for open communication"
+    recommendations: [1, 3, 8],
+    tweetHighlights:
+      "I create a relaxed meeting environment for open communication",
+    id: 8,
   },
   "The Spontaneous Frame Jumper": {
     tagLine: "Adding playful and spontaneous elements to meeting backgrounds.",
@@ -289,23 +299,24 @@ export const PERSONAS_DATA = {
     ],
     strengths: [
       {
-        content:"The wild card of meetings, injecting playfulness by jumping between different background frames",
-        image:"🎭"
+        content:
+          "The wild card of meetings, injecting playfulness by jumping between different background frames",
+        image: "🎭",
       },
       {
-        content:" Adds a touch of whimsy and surprise to the meeting atmosphere",
-        image:"😄"
+        content:
+          " Adds a touch of whimsy and surprise to the meeting atmosphere",
+        image: "😄",
       },
       {
-        content:"Ensures meetings are as entertaining as they are productive",
-        image:"🎉"
-      }
+        content: "Ensures meetings are as entertaining as they are productive",
+        image: "🎉",
+      },
     ],
     weaknesses: [],
-    recommendations: [
-      1, 2, 8
-    ],
-    tweetHighlights:"I add playfulness to meetings with different frames"
+    recommendations: [1, 2, 8],
+    tweetHighlights: "I add playfulness to meetings with different frames",
+    id: 9,
   },
   "The Unconventional Visionary": {
     tagLine: "Embracing a different approach and thinking outside the box.",
@@ -313,86 +324,86 @@ export const PERSONAS_DATA = {
       'Traits: As "The Unconventional Visionary," you embrace a different approach and excel at thinking outside the box. 🌌🚀 Your ability tochallenge conventional thinking and explore innovative ideas sets you apart. Your visionary mindset ignites creativity and inspires others topush boundaries and explore new possibilities. 🧠✨',
       'Your collaboration with diverse personalities becomes a catalyst for groundbreaking discussions and transformative outcomes. Your unconventional thinking complements "The Creative Maverick," enhancing the generation of fresh ideas and sparking creative synergy. 🎨🚀',
       'Together with "The Dynamic Agenda Artist," your visionary mindset helps shape meeting agendas that are not only visually captivating but also conceptually stimulating, ensuring that meetings are thought-provoking and purposeful. 📝🌌🧠',
-      'In summary, as "The Unconventional Visionary," you bring a unique perspective and a spirit of innovation to meetings. Your collaboration with other personalities opens up new horizons, fostering creativity, and driving transformative discussions. 🌌🚀🧠'
+      'In summary, as "The Unconventional Visionary," you bring a unique perspective and a spirit of innovation to meetings. Your collaboration with other personalities opens up new horizons, fostering creativity, and driving transformative discussions. 🌌🚀🧠',
     ],
     strengths: [
       {
-        content:"Embraces a different approach and challenges conventional thinking",
-        image:"🌌"
+        content:
+          "Embraces a different approach and challenges conventional thinking",
+        image: "🌌",
       },
       {
-        content:"Excels at thinking outside the box and exploring innovative ideas",
-        image:"🚀"
+        content:
+          "Excels at thinking outside the box and exploring innovative ideas",
+        image: "🚀",
       },
       {
-        content:"Ignites creativity and inspires others to push boundaries and explore new possibilities",
-        image:"🧠"
-      }
+        content:
+          "Ignites creativity and inspires others to push boundaries and explore new possibilities",
+        image: "🧠",
+      },
     ],
     weaknesses: [
       "May struggle to communicate ideas effectively, leading to confusion among team members",
-      "Can be resistant to traditional methods and may overlook practical considerations at times"
+      "Can be resistant to traditional methods and may overlook practical considerations at times",
     ],
-    recommendations: [
-      8, 2, 1
-    ],
-    tweetHighlights:"My unconventional approach brings innovation to meetings"
+    recommendations: [8, 2, 1],
+    tweetHighlights: "My unconventional approach brings innovation to meetings",
+    id: 10,
   },
 };
 
-// 10th Persona -> recommendations -> 8, 2, 1
-
 export const LOOPIN_FEATURES = [
   {
-    name:"Share meeting summaries with Team",
-    details:'This feature allows the Celebration Connoisseur to share meeting summaries that highlight achievements and milestones, fostering a sense of accomplishment and recognition among the team',
-    summary: 'Shared Summaries',
-    id:1
+    name: "Share meeting summaries with Team",
+    details:
+      "This feature allows the Celebration Connoisseur to share meeting summaries that highlight achievements and milestones, fostering a sense of accomplishment and recognition among the team",
+    summary: "Shared Summaries",
+    id: 1,
   },
   {
-    name:'Customise your summaries using meeting-specific templates',
-    details: '',
-    summary: 'Meeting Summary Type',
-    id:2
+    name: "Customise your summaries using meeting-specific templates",
+    details: "",
+    summary: "Meeting Summary Type",
+    id: 2,
   },
   {
-    name:'Invite your team to collaborate on the meeting summaries - Real Time! 👥',
-    details: '',
-    summary: 'Real Time Collabotaion',
-    id:3
+    name: "Invite your team to collaborate on the meeting summaries - Real Time! 👥",
+    details: "",
+    summary: "Real Time Collabotaion",
+    id: 3,
   },
   {
-    name:'Recap previous meeting notes',
-    details: '',
-    summary: 'Get context using Recap',
-    id:4
+    name: "Recap previous meeting notes",
+    details: "",
+    summary: "Get context using Recap",
+    id: 4,
   },
   {
-    name:'Send summaries to meeting participants over Email, Slack, or Notion',
-    details: '',
-    summary: 'Send Notes to team',
-    id:5
+    name: "Send summaries to meeting participants over Email, Slack, or Notion",
+    details: "",
+    summary: "Send Notes to team",
+    id: 5,
   },
   {
-    name:'Follow up on action items over Slack',
-    details: '',
-    summary: 'Follow Up on Slack',
-    id:6
+    name: "Follow up on action items over Slack",
+    details: "",
+    summary: "Follow Up on Slack",
+    id: 6,
   },
   {
-    name:' Ask Loopin AI for more meeting insights',
-    details: '',
-    summary: 'Get Meeting Insights',
-    id:7
+    name: " Ask Loopin AI for more meeting insights",
+    details: "",
+    summary: "Get Meeting Insights",
+    id: 7,
   },
   {
-    name:'Record and summarize meetings using CE',
-    details: '',
-    summary: 'Automated Meeting Summaries',
-    id:8
-  }
-
-]
+    name: "Record and summarize meetings using CE",
+    details: "",
+    summary: "Automated Meeting Summaries",
+    id: 8,
+  },
+];
 
 export const LOOPIN_REDIRCT_URL = "https://loopinhq.com?meeting-personality";
 

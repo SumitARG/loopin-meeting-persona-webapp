@@ -41,14 +41,6 @@ const SubmitFormComponent = () => {
     }
   }, [firstName]);
 
-  // useEffect(() => {
-  //   if (lastName.trim() === "") {
-  //     setLastNameValidator(false);
-  //   } else {
-  //     setLastNameValidator(true);
-  //   }
-  // }, [lastName]);
-
   useEffect(() => {
     if (company.trim() === "") {
       setCompanyValidator(false);
