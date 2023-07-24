@@ -69,14 +69,17 @@ const ProfileViewCoponent = () => {
         let data = doc.data();
         if (
           data.email !== "" &&
-          (data.email.split("@")[1] === localEmailEnd || data.email.split("@")[1].split('.')[0] === localEmailEnd.split('.')[0])
+          (data.email.split("@")[1] === localEmailEnd ||
+            data.email.split("@")[1].split(".")[0] ===
+              localEmailEnd.split(".")[0])
         ) {
           tempRecords.push(data);
         }
       });
       tempRecords.forEach((item) => {
         if (tempLeaderboard[item.persona]) {
-          tempLeaderboard[item.persona].count = tempLeaderboard[item.persona].count + 1;
+          tempLeaderboard[item.persona].count =
+            tempLeaderboard[item.persona].count + 1;
           tempLeaderboard[item.persona].records.push(item);
         } else {
           tempLeaderboard[item.persona] = {
@@ -86,7 +89,7 @@ const ProfileViewCoponent = () => {
         }
       });
     }
-    console.log(tempLeaderboard)
+    console.log(tempLeaderboard);
     setLeaderboard(tempLeaderboard);
   };
 
@@ -99,7 +102,7 @@ const ProfileViewCoponent = () => {
   }, []);
 
   const downloadHandler = () => {
-    const input = document.getElementById("mainApp");
+    const input = document.getElementById("download-section");
     html2canvas(input).then((canvas) => {
       const imgData = canvas
         .toDataURL("image/png")
@@ -143,97 +146,101 @@ const ProfileViewCoponent = () => {
   };
 
   const toggleDisplayList = (id) => {
-    if(accordianOpenId === id){
+    if (accordianOpenId === id) {
       setAccordianOpenId(-1);
+    } else {
+      setAccordianOpenId(id);
     }
-    else{
-      setAccordianOpenId(id)
-    }
-  }
+  };
 
   return (
     <div className="profile-view-component" id="profile">
-      <div className="preview-section">
-        <div className="preview-header">
-          <div className="header-container">
-            <div className="header-background-1"></div>
-            <div className="header-background-2"></div>
-            <div className="header-background-3"></div>
+      <div className="download-section" id="download-section">
+        <div className="preview-section">
+          <div className="preview-header">
+            <div className="header-container">
+              <div className="header-background-1"></div>
+              <div className="header-background-2"></div>
+              <div className="header-background-3"></div>
+            </div>
+            <div className="persona-header-image">
+              <img src={getPersonaImage()} alt="persona" />
+            </div>
           </div>
-          <div className="persona-header-image">
-            <img src={getPersonaImage()} alt="persona" />
-          </div>
-        </div>
-        <div className="persona-name">{computedPersona}</div>
-        <div className="persona-tagline">{personaDetails.tagLine}</div>
-        <div className="secondary-actions">
-          <OverlayTrigger
-            placement="bottom"
-            overlay={getTooltip("Share your profile")}
-          >
-            <a
-              className="twitter-share-button"
-              target="_blank"
-              rel="noreferrer"
-              href={
-                "https://twitter.com/intent/tweet?size=large&text=Thrilled to discover I'm '" +
-                computedPersona +
-                "'! " +
-                PERSONAS_DATA[computedPersona]?.tweetHighlights +
-                ". Take the meeting personality quiz and find out your style too!&hashtags=AI,Meetings&url=https://persona.loopinhq.com&via=LoopinHQ&related=twitterapi,twitter"
-              }
+          <div className="persona-name">{computedPersona}</div>
+          <div className="persona-tagline">{personaDetails.tagLine}</div>
+          <div className="secondary-actions">
+            <OverlayTrigger
+              placement="bottom"
+              overlay={getTooltip("Share your profile")}
             >
-              <img src={TWITTER_ICON} alt="Twitter" />
-            </a>
-          </OverlayTrigger>
-          <ShareLink link={LOOPIN_QUIZ_SHARE_LINK}>
-            {(link) => (
+              <a
+                className="twitter-share-button"
+                target="_blank"
+                rel="noreferrer"
+                href={
+                  "https://twitter.com/intent/tweet?size=large&text=Thrilled to discover I'm '" +
+                  computedPersona +
+                  "'! " +
+                  PERSONAS_DATA[computedPersona]?.tweetHighlights +
+                  ". Take the meeting personality quiz and find out your style too!&hashtags=AI,Meetings&url=https://persona.loopinhq.com&via=LoopinHQ&related=twitterapi,twitter"
+                }
+              >
+                <img src={TWITTER_ICON} alt="Twitter" />
+              </a>
+            </OverlayTrigger>
+            <ShareLink link={LOOPIN_QUIZ_SHARE_LINK}>
+              {(link) => (
+                <OverlayTrigger
+                  placement="bottom"
+                  overlay={getTooltip("Share on Linkedin")}
+                >
+                  <a href={link} target="_blank" rel="noreferrer">
+                    <img src={LINKEDIN_ICON} alt="Linkedin" />
+                  </a>
+                </OverlayTrigger>
+              )}
+            </ShareLink>
+            <div className="share-copy">
               <OverlayTrigger
                 placement="bottom"
-                overlay={getTooltip("Share on Linkedin")}
+                overlay={getTooltip("Copy URL")}
               >
-                <a href={link} target="_blank" rel="noreferrer">
-                  <img src={LINKEDIN_ICON} alt="Linkedin" />
-                </a>
+                <img
+                  src={SHARE_ICON}
+                  alt="share"
+                  onClick={() => {
+                    navigator.clipboard.writeText(LOOPIN_QUIZ_SHARE_LINK);
+                    setCopyMessageFlag(true);
+                    setTimeout(() => {
+                      setCopyMessageFlag(false);
+                    }, 5000);
+                  }}
+                />
               </OverlayTrigger>
-            )}
-          </ShareLink>
-          <div className="share-copy">
-            <OverlayTrigger placement="bottom" overlay={getTooltip("Copy URL")}>
-              <img
-                src={SHARE_ICON}
-                alt="share"
-                onClick={() => {
-                  navigator.clipboard.writeText(LOOPIN_QUIZ_SHARE_LINK);
-                  setCopyMessageFlag(true);
-                  setTimeout(() => {
-                    setCopyMessageFlag(false);
-                  }, 5000);
-                }}
-              />
-            </OverlayTrigger>
-            {copyMessageFlag && <div className="copied-message">Copied</div>}
+              {copyMessageFlag && <div className="copied-message">Copied</div>}
+            </div>
+          </div>
+          <PrimaryButton
+            buttonLabel="Download Profile"
+            buttonWidth="385"
+            onButtonClick={downloadHandler}
+          />
+        </div>
+        <div className="description-section">
+          <div className="persona-description">
+            <p>Making meetings memorable through creative highlights.</p>
+            {personaDetails.description.map((item) => (
+              <p key={item}>{item}</p>
+            ))}
           </div>
         </div>
-        <PrimaryButton
-          buttonLabel="Download Profile"
-          buttonWidth="385"
-          onButtonClick={downloadHandler}
-        />
-      </div>
-      <div className="description-section">
-        <div className="persona-description">
-          <p>Making meetings memorable through creative highlights.</p>
-          {personaDetails.description.map((item) => (
-            <p key={item}>{item}</p>
-          ))}
+        <div className="loopin-insights">
+          <LoopinInsights
+            strengths={personaDetails.strengths}
+            recommendations={personaDetails.recommendations}
+          />
         </div>
-      </div>
-      <div className="loopin-insights">
-        <LoopinInsights
-          strengths={personaDetails.strengths}
-          recommendations={personaDetails.recommendations}
-        />
       </div>
       <div className="leaderboard">
         <div className="leaderboard-header">Your Company leaderboard</div>
@@ -258,23 +265,38 @@ const ProfileViewCoponent = () => {
               <div className="persona-name">"{item}"</div>
               <div className="count">
                 x{leaderboard[item]?.count > 0 ? leaderboard[item]?.count : 0}
-                {leaderboard[item]?.records?.length > 0 ? <label className="view-list" onClick={() => toggleDisplayList(PERSONAS_DATA[item].id)}>View List</label>:''}
+                {leaderboard[item]?.records?.length > 0 ? (
+                  <label
+                    className="view-list"
+                    onClick={() => toggleDisplayList(PERSONAS_DATA[item].id)}
+                  >
+                    View List
+                  </label>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
-            {<div className={`display-list ${accordianOpenId === PERSONAS_DATA[item].id?'show-list':''}`}>
-              {leaderboard[item]?.records?.map((item, i) => (
-                <React.Fragment key={i}>
-                  <div className="persona-user">
-                    <div className="user-initial">{item.email.charAt(0)}</div>
-                    <div className="user-name">{item.firstName}</div>
-                    <div className="user-email">{item.email}</div>
-                  </div>
-                  <div className="leaderboard-persona-separator">
-                    <hr className="seprator-line" />
-                  </div>
-                </React.Fragment>
-              ))}
-            </div>}
+            {
+              <div
+                className={`display-list ${
+                  accordianOpenId === PERSONAS_DATA[item].id ? "show-list" : ""
+                }`}
+              >
+                {leaderboard[item]?.records?.map((item, i) => (
+                  <React.Fragment key={i}>
+                    <div className="persona-user">
+                      <div className="user-initial">{item.email.charAt(0)}</div>
+                      <div className="user-name">{item.firstName}</div>
+                      <div className="user-email">{item.email}</div>
+                    </div>
+                    <div className="leaderboard-persona-separator">
+                      <hr className="seprator-line" />
+                    </div>
+                  </React.Fragment>
+                ))}
+              </div>
+            }
             <div className="leaderboard-persona-separator">
               <hr className="seprator-line" />
             </div>

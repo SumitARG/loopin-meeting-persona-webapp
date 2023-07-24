@@ -16,6 +16,14 @@
     // height: 100vh;
 }
 
+
+.download-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
 .preview-header {
     width: 70%;
 }
@@ -249,7 +257,7 @@
             width: 30%;
             text-align: center;
         }
-        
+
         .user-email{
             width: 30%;
             text-align: end;
