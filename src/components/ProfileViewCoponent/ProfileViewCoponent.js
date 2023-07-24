@@ -69,7 +69,7 @@ const ProfileViewCoponent = () => {
         let data = doc.data();
         if (
           data.email !== "" &&
-          data.email.split("@")[1].includes(localEmailEnd)
+          (data.email.split("@")[1] === localEmailEnd || data.email.split("@")[1].split('.')[0] === localEmailEnd.split('.')[0])
         ) {
           tempRecords.push(data);
         }
