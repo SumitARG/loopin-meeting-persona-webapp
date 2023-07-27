@@ -262,7 +262,7 @@ const ProfileViewCoponent = () => {
                   alt="persona"
                 />
               </div>
-              <div className="persona-name">"{item}"</div>
+              <div className="leaderboard-persona-name">"{item}"</div>
               <div className="count">
                 x{leaderboard[item]?.count > 0 ? leaderboard[item]?.count : 0}
                 {leaderboard[item]?.records?.length > 0 ? (

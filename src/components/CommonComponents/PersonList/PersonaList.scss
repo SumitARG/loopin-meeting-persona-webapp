@@ -110,3 +110,21 @@
         width: 150px;
     }
 }
+
+@media only screen and (max-width: 420px) {
+    .persona-list-container{
+        padding: 108px 14px;
+    }
+    .persona-list-header{
+        flex-direction: column;
+    }
+    .persona{
+        flex-direction: column;
+        gap: 156px;
+    }
+    .persona-details-content{
+        .persona-tagline{
+            text-align: center;
+        }
+    } 
+}

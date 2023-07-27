@@ -46,10 +46,23 @@
     border-radius: 16px;
     background: #282F39;
     color: white;
+    text-align: center;
 }
 
 @media only screen and (max-width: 820px){
     .feature-card{
         width: 60%;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .feature-card{
+        width: 100%;
+        img{
+            width: 100%;
+        }
     }
 }
